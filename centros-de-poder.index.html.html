@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los 5 Centros de Poder — Mujer Soberana</title>
+<style>
+:root {
+  --gold: #C8960C;
+  --gold-soft: rgba(200,150,12,0.25);
+  --cream: #FDF8F0;
+  --dark: #08060F;
+  --card-bg: #110E1C;
+  --t-bg: #1A1100; --t-acc: #C8960C; --t-light: #F0C878; --t-mid: #9A6E08;
+  --f-bg: #1A0200; --f-acc: #C53030; --f-light: #FCA5A5; --f-mid: #922020;
+  --a-bg: #000F1F; --a-acc: #2563EB; --a-light: #93C5FD; --a-mid: #1D4ED8;
+  --g-bg: #001A14; --g-acc: #059669; --g-light: #6EE7B7; --g-mid: #047857;
+  --e-bg: #100520; --e-acc: #7C3AED; --e-light: #C4B5FD; --e-mid: #6D28D9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Stars */
+#stars-canvas {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+}
+
+.wrap {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 540px;
+  margin: 0 auto; padding: 3rem 1.5rem 4rem;
+}
+
+/* Steps */
+.step { display: none; animation: fadeUp .55s ease both; }
+.step.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Labels & headings */
+.eyebrow {
+  text-align: center; font-size: 10px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.title {
+  text-align: center; font-size: 38px; font-weight: normal;
+  color: var(--cream); line-height: 1.15; margin-bottom: .75rem;
+}
+.sub {
+  text-align: center; font-size: 14px;
+  color: rgba(253,248,240,.55); line-height: 1.75; margin-bottom: 2rem;
+}
+
+/* Deck display */
+.deck {
+  display: flex; justify-content: center; align-items: flex-end;
+  gap: 8px; margin: 2rem 0 2.5rem; padding: 0 .5rem;
+}
+.card-back {
+  width: 76px; height: 120px; border-radius: 9px;
+  background: var(--card-bg);
+  border: 1.5px solid rgba(200,150,12,.35);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+  font-size: 20px; color: var(--gold);
+  transition: transform .3s ease;
+}
+.card-back:nth-child(1) { transform: rotate(-9deg) translateY(6px); animation: float1 3.5s ease-in-out infinite; }
+.card-back:nth-child(2) { transform: rotate(-4deg) translateY(3px); animation: float2 3.2s ease-in-out infinite; }
+.card-back:nth-child(3) { transform: rotate(0deg);                  animation: float3 3.8s ease-in-out infinite; }
+.card-back:nth-child(4) { transform: rotate(4deg) translateY(3px);  animation: float4 3.4s ease-in-out infinite; }
+.card-back:nth-child(5) { transform: rotate(9deg) translateY(6px);  animation: float5 3.1s ease-in-out infinite; }
+@keyframes float1 { 0%,100%{transform:rotate(-9deg) translateY(6px)} 50%{transform:rotate(-9deg) translateY(0)} }
+@keyframes float2 { 0%,100%{transform:rotate(-4deg) translateY(3px)} 50%{transform:rotate(-4deg) translateY(-4px)} }
+@keyframes float3 { 0%,100%{transform:rotate(0deg) translateY(0)} 50%{transform:rotate(0deg) translateY(-6px)} }
+@keyframes float4 { 0%,100%{transform:rotate(4deg) translateY(3px)} 50%{transform:rotate(4deg) translateY(-4px)} }
+@keyframes float5 { 0%,100%{transform:rotate(9deg) translateY(6px)} 50%{transform:rotate(9deg) translateY(0)} }
+.card-back .card-sym { font-size: 22px; }
+.card-back .card-line { width: 30px; height: 1px; background: rgba(200,150,12,.3); }
+
+/* Buttons */
+.btn {
+  display: block; width: 100%; max-width: 300px; margin: 0 auto;
+  padding: 14px 28px; background: transparent;
+  border: 1.5px solid var(--gold); border-radius: 3px;
+  color: var(--gold); font-family: inherit; font-size: 12px;
+  letter-spacing: 3px; text-transform: uppercase; cursor: pointer;
+  transition: all .3s ease;
+}
+.btn:hover { background: var(--gold); color: #0A0800; }
+
+.btn-ghost {
+  display: block; background: none; border: none;
+  color: rgba(253,248,240,.3); font-family: inherit; font-size: 11px;
+  letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer;
+  text-align: center; margin: 1.25rem auto 0; padding: 6px;
+  transition: color .3s;
+}
+.btn-ghost:hover { color: rgba(253,248,240,.65); }
+
+/* Form card */
+.form-card {
+  background: var(--card-bg); border: 1px solid rgba(200,150,12,.18);
+  border-radius: 14px; padding: 2rem 1.75rem; margin: 1.5rem 0;
+}
+.field-label {
+  display: block; font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: rgba(253,248,240,.4); margin-bottom: 1rem;
+}
+.date-row { display: flex; gap: 10px; margin-bottom: 1.25rem; }
+.date-col { flex: 1; }
+.date-col > label {
+  display: block; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(253,248,240,.3); margin-bottom: 5px; text-align: center;
+}
+.date-col input {
+  width: 100%; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(200,150,12,.25); border-radius: 6px;
+  color: var(--cream); font-family: inherit; font-size: 22px;
+  padding: 10px 6px; text-align: center; outline: none;
+  transition: border-color .3s;
+  -moz-appearance: textfield;
+}
+.date-col input::-webkit-outer-spin-button,
+.date-col input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.date-col input:focus { border-color: var(--gold); }
+.err { color: #F87171; font-size: 12px; text-align: center; margin-bottom: .75rem; display: none; }
+.btn-calc { max-width: 100%; margin-top: .25rem; }
+
+/* Result card */
+.el-card {
+  border-radius: 16px; padding: 2.5rem 2rem 2rem;
+  text-align: center; position: relative; overflow: hidden;
+  animation: revealCard .7s cubic-bezier(.22,.68,0,1.2) both;
+}
+@keyframes revealCard {
+  from { opacity: 0; transform: scale(.88) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.el-glow {
+  position: absolute; width: 200px; height: 200px; border-radius: 50%;
+  top: -80px; left: 50%; transform: translateX(-50%);
+  filter: blur(60px); opacity: .25; pointer-events: none;
+}
+.el-sym { font-size: 52px; display: block; margin-bottom: .5rem; }
+.el-tag {
+  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+  opacity: .6; margin-bottom: .25rem;
+}
+.el-name { font-size: 30px; font-weight: normal; margin-bottom: .25rem; line-height: 1.2; }
+.el-archetype {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  opacity: .5; margin-bottom: 1.5rem;
+}
+.divider { width: 36px; height: 1px; margin: 0 auto 1.5rem; opacity: .35; }
+.section-tag {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  opacity: .5; margin-bottom: .6rem;
+}
+.el-poder { font-size: 14px; line-height: 1.8; opacity: .85; margin-bottom: 1.5rem; }
+.focus-list { list-style: none; text-align: left; }
+.focus-list li {
+  font-size: 13px; line-height: 1.6; padding: 7px 0 7px 1.5rem;
+  position: relative; opacity: .82;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.focus-list li:last-child { border-bottom: none; }
+.focus-list li::before {
+  content: '✦'; position: absolute; left: 0;
+  font-size: 7px; top: 11px; opacity: .5;
+}
+.vida-num {
+  margin-top: 1.75rem; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; opacity: .3;
+}
+
+/* Element themes */
+.el-tierra { background: var(--t-bg); border: 1.5px solid var(--t-acc); color: var(--t-light); }
+.el-tierra .el-glow { background: var(--t-acc); }
+.el-tierra .divider { background: var(--t-acc); }
+
+.el-fuego { background: var(--f-bg); border: 1.5px solid var(--f-acc); color: var(--f-light); }
+.el-fuego .el-glow { background: var(--f-acc); }
+.el-fuego .divider { background: var(--f-acc); }
+
+.el-aire { background: var(--a-bg); border: 1.5px solid var(--a-acc); color: var(--a-light); }
+.el-aire .el-glow { background: var(--a-acc); }
+.el-aire .divider { background: var(--a-acc); }
+
+.el-agua { background: var(--g-bg); border: 1.5px solid var(--g-acc); color: var(--g-light); }
+.el-agua .el-glow { background: var(--g-acc); }
+.el-agua .divider { background: var(--g-acc); }
+
+.el-eter { background: var(--e-bg); border: 1.5px solid var(--e-acc); color: var(--e-light); }
+.el-eter .el-glow { background: var(--e-acc); }
+.el-eter .divider { background: var(--e-acc); }
+
+/* CTA */
+.cta-box {
+  margin-top: 2rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+}
+.cta-headline {
+  font-size: 17px; color: rgba(253,248,240,.85);
+  line-height: 1.55; margin-bottom: .5rem;
+}
+.cta-detail {
+  font-size: 12px; color: rgba(253,248,240,.4);
+  line-height: 1.6; margin-bottom: 1.5rem;
+}
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: #fff; padding: 15px 30px;
+  border-radius: 50px; text-decoration: none; font-family: inherit;
+  font-size: 13px; letter-spacing: .5px; transition: all .3s;
+}
+.btn-wa:hover { background: #1DA851; transform: scale(1.03); }
+.btn-wa svg { flex-shrink: 0; }
+.num-note {
+  margin-top: 1rem; font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(253,248,240,.2); text-align: center;
+}
+</style>
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<div class="wrap">
+
+  <!-- ── STEP 1: INTRO ── -->
+  <div id="s-intro" class="step active">
+    <p class="eyebrow">✦ Ritual de Autoconocimiento ✦</p>
+    <h1 class="title">Los 5 Centros<br>de Poder</h1>
+    <p class="sub">
+      Cada mujer nace bajo la influencia de un elemento primordial.<br>
+      Descubre el tuyo y activa tu transformación soberana.
+    </p>
+
+    <div class="deck">
+      <div class="card-back"><span class="card-sym">◈</span><div class="card-line"></div></div>
+      <div class="card-back"><span class="card-sym">△</span><div class="card-line"></div></div>
+      <div class="card-back"><span class="card-sym">◇</span><div class="card-line"></div></div>
+      <div class="card-back"><span class="card-sym">≋</span><div class="card-line"></div></div>
+      <div class="card-back"><span class="card-sym">✦</span><div class="card-line"></div></div>
+    </div>
+
+    <p class="sub" style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(200,150,12,.5); margin-bottom:2.5rem;">
+      Tierra · Fuego · Aire · Agua · Éter
+    </p>
+
+    <button class="btn" onclick="go('s-form')">Descubrir mi Centro de Poder</button>
+  </div>
+
+  <!-- ── STEP 2: FORM ── -->
+  <div id="s-form" class="step">
+    <p class="eyebrow">✦ Tu Código de Poder ✦</p>
+    <h1 class="title" style="font-size:30px;">¿Cuándo llegaste<br>al mundo?</h1>
+    <p class="sub">Tu fecha de nacimiento guarda el código de tu elemento primordial.</p>
+
+    <div class="form-card">
+      <span class="field-label">Fecha de nacimiento</span>
+      <div class="date-row">
+        <div class="date-col">
+          <label>Día</label>
+          <input type="number" id="inp-d" min="1" max="31" placeholder="DD">
+        </div>
+        <div class="date-col">
+          <label>Mes</label>
+          <input type="number" id="inp-m" min="1" max="12" placeholder="MM">
+        </div>
+        <div class="date-col" style="flex:1.6;">
+          <label>Año</label>
+          <input type="number" id="inp-y" min="1920" max="2008" placeholder="AAAA" style="font-size:18px;">
+        </div>
+      </div>
+      <p class="err" id="err-msg">Por favor ingresa una fecha completa y válida.</p>
+      <button class="btn btn-calc" onclick="calcular()">Revelar mi Centro de Poder →</button>
+    </div>
+
+    <button class="btn-ghost" onclick="go('s-intro')">← Volver</button>
+  </div>
+
+  <!-- ── STEP 3: RESULT ── -->
+  <div id="s-result" class="step">
+    <p class="eyebrow" id="r-eyebrow">✦ Tu Centro de Poder ✦</p>
+
+    <div id="el-card" class="el-card">
+      <div class="el-glow"></div>
+      <span id="el-sym" class="el-sym"></span>
+      <p id="el-tag" class="el-tag"></p>
+      <h2 id="el-name" class="el-name"></h2>
+      <p id="el-arch" class="el-archetype"></p>
+      <div class="divider"></div>
+      <p class="section-tag">Tu Poder Primordial</p>
+      <p id="el-poder" class="el-poder"></p>
+      <div class="divider"></div>
+      <p class="section-tag">Áreas de Transformación</p>
+      <ul id="el-focus" class="focus-list"></ul>
+      <p id="el-num" class="vida-num"></p>
+    </div>
+
+    <div class="cta-box">
+      <p class="cta-headline">¿Lista para activar tu transformación<br>en el Retiro Soberana?</p>
+      <p class="cta-detail">
+        Un espacio sagrado donde mujeres de todo el mundo eligen<br>
+        vivir en plena libertad, poder y soberanía.
+      </p>
+      <a id="btn-wa" class="btn-wa"
+         href="https://wa.me/526271499074?text=Hola%2C+quiero+información+sobre+el+Retiro+Soberana+%F0%9F%8C%8A"
+         target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.37A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.28c-.2.57-1.18 1.09-1.63 1.15-.42.06-.96.09-1.55-.1-.36-.11-.82-.26-1.4-.51-2.46-1.06-4.07-3.53-4.2-3.7-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.85-2.03.22-.24.47-.3.63-.3h.45c.14 0 .34-.05.52.4l.75 1.87c.06.15.02.33-.08.46l-.43.52c-.1.12-.21.25-.09.48.12.22.53.88 1.14 1.43.79.7 1.45.92 1.66 1.02.21.1.33.08.45-.05l.62-.72c.14-.17.28-.13.45-.07l1.8.85c.21.1.34.14.39.23.06.09.06.51-.14 1.08z"/>
+        </svg>
+        Quiero información del Retiro Soberana
+      </a>
+    </div>
+
+    <p class="num-note">Calculado con numerología pitagórica del número de vida</p>
+    <button class="btn-ghost" onclick="go('s-form')">← Calcular de nuevo</button>
+  </div>
+
+</div>
+
+<script>
+// ── Stars canvas ──
+(function(){
+  const c = document.getElementById('stars-canvas');
+  const ctx = c.getContext('2d');
+  const resize = () => { c.width = innerWidth; c.height = innerHeight; };
+  resize(); window.addEventListener('resize', resize);
+  const stars = Array.from({length:120}, () => ({
+    x: Math.random(), y: Math.random(),
+    r: Math.random()*1.2+.3, a: Math.random(), da: (Math.random()*.6+.2)*(Math.random()<.5?1:-1)
+  }));
+  function draw() {
+    ctx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s => {
+      s.a += s.da * .005; if(s.a>1)s.da=-Math.abs(s.da); if(s.a<0)s.da=Math.abs(s.da);
+      ctx.beginPath(); ctx.arc(s.x*c.width, s.y*c.height, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(255,255,255,${Math.max(0,Math.min(1,s.a*0.55))})`; ctx.fill();
+    }); requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── Step navigation ──
+function go(id) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── Numerology ──
+function reduce9(n) {
+  while (n > 9) n = String(n).split('').reduce((a,d)=>a+parseInt(d),0);
+  return n;
+}
+
+// ── Element data ──
+const DATA = {
+  tierra: {
+    cls: 'el-tierra', sym: '◈',
+    tag: 'Centro Tierra', name: 'La Tierra', arch: 'Abundancia · Raíz · Presencia',
+    poder: 'La Tierra te llama a enraizarte en tu cuerpo como templo sagrado, a reclamar tu derecho a la abundancia sin culpa, y a construir la seguridad interior que nadie puede quitarte.',
+    focus: [
+      'Sanar tu relación con el dinero y la prosperidad material',
+      'Reconectar con la sabiduría y señales de tu cuerpo',
+      'Establecer límites firmes desde el amor, no desde el miedo',
+      'Crear una base interior de estabilidad y arraigo profundo',
+      'Disolver creencias de escasez heredadas de tu linaje'
+    ]
+  },
+  fuego: {
+    cls: 'el-fuego', sym: '△',
+    tag: 'Centro Fuego', name: 'El Fuego', arch: 'Voluntad · Coraje · Poder Creativo',
+    poder: 'El Fuego te convoca a despertar tu voluntad soberana, a soltar el miedo a brillar con toda tu luz, y a convertir cada llama de ira reprimida en combustible para tu transformación.',
+    focus: [
+      'Liberar la ira reprimida y convertirla en acción consciente',
+      'Superar el miedo a la visibilidad y a ser vista en tu plenitud',
+      'Activar tu poder creativo y tu sensualidad como fuerza sagrada',
+      'Tomar decisiones desde el coraje, no desde la aprobación',
+      'Quemar lo que ya no sirve y renacer desde tu centro de fuego'
+    ]
+  },
+  aire: {
+    cls: 'el-aire', sym: '◇',
+    tag: 'Centro Aire', name: 'El Aire', arch: 'Mente · Palabra · Libertad',
+    poder: 'El Aire te invita a liberarte de los pensamientos que te aprisionan, a elevar tu voz con verdad y sin disculpas, y a habitar la libertad incondicional que vive en tu mente soberana.',
+    focus: [
+      'Desmantelar creencias limitantes heredadas y adquiridas',
+      'Sanar y empoderar tu voz y tu expresión auténtica',
+      'Desarrollar claridad mental para decidir con confianza',
+      'Soltar la necesidad de validación externa para actuar',
+      'Cultivar la paz mental como estado natural de tu ser'
+    ]
+  },
+  agua: {
+    cls: 'el-agua', sym: '≋',
+    tag: 'Centro Agua', name: 'El Agua', arch: 'Emoción · Intuición · Sanación',
+    poder: 'El Agua te guía a honrar tus emociones como mensajeras de verdad, a liberar lo que ya no fluye, y a activar tu intuición femenina como la brújula más poderosa y confiable que tienes.',
+    focus: [
+      'Procesar y sanar heridas emocionales del pasado y el linaje',
+      'Liberarte de patrones de codependencia y complacencia',
+      'Desarrollar y confiar plenamente en tu intuición',
+      'Aprender a fluir con los ciclos de tu vida sin resistencia',
+      'Transformar el dolor emocional en compasión y sabiduría'
+    ]
+  },
+  eter: {
+    cls: 'el-eter', sym: '✦',
+    tag: 'Centro Éter', name: 'El Éter', arch: 'Espíritu · Propósito · Soberanía del Alma',
+    poder: 'El Éter te convoca a recordar quién eres más allá de todos los roles y condicionamientos. Eres espíritu encarnado, y tu transformación profunda pasa por reclamar esa sabiduría cósmica que ya vive en ti.',
+    focus: [
+      'Reconectar con tu propósito y misión de vida más elevada',
+      'Soltar la búsqueda externa de validación espiritual',
+      'Integrar todos tus centros de poder en unidad sagrada',
+      'Vivir desde la soberanía del alma como estado permanente',
+      'Expandir tu conciencia más allá de los límites que te impusieron'
+    ]
+  }
+};
+
+const MAP = {1:'tierra',2:'agua',3:'fuego',4:'aire',5:'eter',6:'tierra',7:'agua',8:'fuego',9:'aire'};
+
+// ── Calculate ──
+function calcular() {
+  const d = parseInt(document.getElementById('inp-d').value);
+  const m = parseInt(document.getElementById('inp-m').value);
+  const y = parseInt(document.getElementById('inp-y').value);
+  const err = document.getElementById('err-msg');
+
+  if (!d||!m||!y||d<1||d>31||m<1||m>12||y<1920||y>2008) {
+    err.style.display='block'; return;
+  }
+  err.style.display='none';
+
+  const digits = (String(d)+String(m)+String(y)).split('').map(Number);
+  const vida = reduce9(digits.reduce((a,n)=>a+n,0));
+  const key = MAP[vida];
+  const el = DATA[key];
+
+  // Build card
+  const card = document.getElementById('el-card');
+  card.className = 'el-card ' + el.cls;
+  document.getElementById('el-sym').textContent  = el.sym;
+  document.getElementById('el-tag').textContent  = el.tag;
+  document.getElementById('el-name').textContent = el.name;
+  document.getElementById('el-arch').textContent = el.arch;
+  document.getElementById('el-poder').textContent= el.poder;
+  document.getElementById('el-num').textContent  = 'Número de vida · ' + vida;
+  const ul = document.getElementById('el-focus');
+  ul.innerHTML = el.focus.map(f=>`<li>${f}</li>`).join('');
+
+  // CTA with personalized text
+  const msg = encodeURIComponent(`Hola, acabo de descubrir que mi Centro de Poder es ${el.name} (número de vida ${vida}) y quiero información sobre el Retiro Soberana 🌊`);
+  document.getElementById('btn-wa').href = `https://wa.me/526271499074?text=${msg}`;
+
+  go('s-result');
+}
+
+// Allow Enter key in inputs
+document.addEventListener('keydown', e => {
+  if (e.key==='Enter' && document.getElementById('s-form').classList.contains('active')) calcular();
+});
+</script>
+</body>
+</html>
