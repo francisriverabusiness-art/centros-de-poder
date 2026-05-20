@@ -3,270 +3,398 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Los 5 Centros de Poder — Mujer Soberana</title>
+<title>Los 5 Centros de Poder — Inmersión Soberana</title>
 <style>
 :root {
-  --gold: #C8960C;
-  --gold-soft: rgba(200,150,12,0.25);
-  --cream: #FDF8F0;
-  --dark: #08060F;
-  --card-bg: #110E1C;
-  --t-bg: #1A1100; --t-acc: #C8960C; --t-light: #F0C878; --t-mid: #9A6E08;
-  --f-bg: #1A0200; --f-acc: #C53030; --f-light: #FCA5A5; --f-mid: #922020;
-  --a-bg: #000F1F; --a-acc: #2563EB; --a-light: #93C5FD; --a-mid: #1D4ED8;
-  --g-bg: #001A14; --g-acc: #059669; --g-light: #6EE7B7; --g-mid: #047857;
-  --e-bg: #100520; --e-acc: #7C3AED; --e-light: #C4B5FD; --e-mid: #6D28D9;
+  /* Paleta SOBERANA */
+  --teal: #2BA8A8;
+  --teal-dark: #1F7F7F;
+  --teal-soft: rgba(43, 168, 168, 0.15);
+  --gold: #B8941F;
+  --gold-dark: #8A6E10;
+  --gold-soft: rgba(184, 148, 31, 0.2);
+  --cream: #F5EFE0;
+  --cream-warm: #FAF5E6;
+  --cream-deep: #EDE5D1;
+  --text: #3D2817;
+  --text-soft: #6B5440;
+  --line: rgba(184, 148, 31, 0.3);
+
+  /* Colores de elementos según marca SOBERANA */
+  --t-bg: #FAF3E0; --t-acc: #B8941F; --t-text: #5C4109; --t-light: #F5E9C8;
+  --f-bg: #FDEEEA; --f-acc: #D4583E; --f-text: #7A2818; --f-light: #FAD7CC;
+  --a-bg: #E6F4F4; --a-acc: #2BA8A8; --a-text: #0F4D4D; --a-light: #BFE2E2;
+  --g-bg: #E8EFF8; --g-acc: #4A6FA5; --g-text: #1F3A60; --g-light: #C9D7EE;
+  --e-bg: #F0E8F5; --e-acc: #8C6BB1; --e-text: #4A2C6A; --e-light: #DECCE8;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background: var(--dark);
-  color: var(--cream);
-  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', 'Playfair Display', 'Palatino Linotype', Georgia, serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
-
-/* Stars */
-#stars-canvas {
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(43,168,168,0.04), transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(184,148,31,0.04), transparent 50%);
+  pointer-events: none; z-index: 0;
 }
 
 .wrap {
   position: relative; z-index: 1;
-  width: 100%; max-width: 540px;
-  margin: 0 auto; padding: 3rem 1.5rem 4rem;
+  width: 100%; max-width: 580px;
+  margin: 0 auto; padding: 2rem 1.25rem 3rem;
+}
+
+/* Borde decorativo */
+.frame {
+  position: relative;
+  border-top: 8px solid var(--gold);
+  border-bottom: 8px solid var(--gold);
+  background: var(--cream-warm);
+  padding: 2.5rem 1.75rem;
+  box-shadow: 0 4px 30px rgba(61, 40, 23, 0.08);
 }
 
 /* Steps */
 .step { display: none; animation: fadeUp .55s ease both; }
 .step.active { display: block; }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Labels & headings */
+/* Tipografía */
 .eyebrow {
-  text-align: center; font-size: 10px; letter-spacing: 4px;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  text-align: center; font-size: 11px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--teal);
+  font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+.eyebrow::before, .eyebrow::after {
+  content: '◈'; margin: 0 .6rem; opacity: .6; font-size: 9px;
 }
 .title {
-  text-align: center; font-size: 38px; font-weight: normal;
-  color: var(--cream); line-height: 1.15; margin-bottom: .75rem;
+  text-align: center; font-size: 44px; font-weight: 400;
+  color: var(--teal); line-height: 1.1; margin-bottom: .35rem;
+  letter-spacing: -0.5px;
+}
+.title-italic {
+  text-align: center; font-style: italic;
+  font-size: 18px; color: var(--gold-dark);
+  margin-bottom: 1.5rem; font-weight: 400;
 }
 .sub {
-  text-align: center; font-size: 14px;
-  color: rgba(253,248,240,.55); line-height: 1.75; margin-bottom: 2rem;
+  text-align: center; font-size: 16px;
+  color: var(--text); line-height: 1.75; margin-bottom: 2rem;
+  font-style: italic;
 }
 
-/* Deck display */
-.deck {
-  display: flex; justify-content: center; align-items: flex-end;
-  gap: 8px; margin: 2rem 0 2.5rem; padding: 0 .5rem;
+/* Pentagrama SVG */
+.pentagram-svg {
+  display: block; margin: .5rem auto 1.5rem;
+  width: 220px; height: 220px;
 }
-.card-back {
-  width: 76px; height: 120px; border-radius: 9px;
-  background: var(--card-bg);
-  border: 1.5px solid rgba(200,150,12,.35);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 6px;
-  font-size: 20px; color: var(--gold);
-  transition: transform .3s ease;
+
+/* Sun icon */
+.sun-icon {
+  display: block; margin: 0 auto 1rem;
+  width: 40px; height: 40px;
 }
-.card-back:nth-child(1) { transform: rotate(-9deg) translateY(6px); animation: float1 3.5s ease-in-out infinite; }
-.card-back:nth-child(2) { transform: rotate(-4deg) translateY(3px); animation: float2 3.2s ease-in-out infinite; }
-.card-back:nth-child(3) { transform: rotate(0deg);                  animation: float3 3.8s ease-in-out infinite; }
-.card-back:nth-child(4) { transform: rotate(4deg) translateY(3px);  animation: float4 3.4s ease-in-out infinite; }
-.card-back:nth-child(5) { transform: rotate(9deg) translateY(6px);  animation: float5 3.1s ease-in-out infinite; }
-@keyframes float1 { 0%,100%{transform:rotate(-9deg) translateY(6px)} 50%{transform:rotate(-9deg) translateY(0)} }
-@keyframes float2 { 0%,100%{transform:rotate(-4deg) translateY(3px)} 50%{transform:rotate(-4deg) translateY(-4px)} }
-@keyframes float3 { 0%,100%{transform:rotate(0deg) translateY(0)} 50%{transform:rotate(0deg) translateY(-6px)} }
-@keyframes float4 { 0%,100%{transform:rotate(4deg) translateY(3px)} 50%{transform:rotate(4deg) translateY(-4px)} }
-@keyframes float5 { 0%,100%{transform:rotate(9deg) translateY(6px)} 50%{transform:rotate(9deg) translateY(0)} }
-.card-back .card-sym { font-size: 22px; }
-.card-back .card-line { width: 30px; height: 1px; background: rgba(200,150,12,.3); }
 
 /* Buttons */
 .btn {
-  display: block; width: 100%; max-width: 300px; margin: 0 auto;
-  padding: 14px 28px; background: transparent;
-  border: 1.5px solid var(--gold); border-radius: 3px;
-  color: var(--gold); font-family: inherit; font-size: 12px;
+  display: block; width: 100%; max-width: 340px; margin: 0 auto;
+  padding: 16px 32px; background: var(--teal);
+  border: none; border-radius: 0;
+  color: white; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;
   letter-spacing: 3px; text-transform: uppercase; cursor: pointer;
-  transition: all .3s ease;
+  transition: all .3s ease; font-weight: 500;
 }
-.btn:hover { background: var(--gold); color: #0A0800; }
+.btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(43,168,168,0.3); }
 
 .btn-ghost {
   display: block; background: none; border: none;
-  color: rgba(253,248,240,.3); font-family: inherit; font-size: 11px;
-  letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer;
-  text-align: center; margin: 1.25rem auto 0; padding: 6px;
-  transition: color .3s;
+  color: var(--text-soft); font-family: inherit; font-size: 14px;
+  cursor: pointer; text-align: center; margin: 1.5rem auto 0; padding: 8px;
+  font-style: italic; opacity: .7;
+  transition: opacity .3s, color .3s;
 }
-.btn-ghost:hover { color: rgba(253,248,240,.65); }
+.btn-ghost:hover { opacity: 1; color: var(--teal); }
 
-/* Form card */
+/* Form */
 .form-card {
-  background: var(--card-bg); border: 1px solid rgba(200,150,12,.18);
-  border-radius: 14px; padding: 2rem 1.75rem; margin: 1.5rem 0;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 2rem 1.5rem; margin: 1.5rem 0;
 }
 .field-label {
-  display: block; font-size: 10px; letter-spacing: 2.5px;
-  text-transform: uppercase; color: rgba(253,248,240,.4); margin-bottom: 1rem;
+  display: block; text-align: center; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-dark);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: 1.5rem;
 }
-.date-row { display: flex; gap: 10px; margin-bottom: 1.25rem; }
+.date-row { display: flex; gap: 12px; margin-bottom: 1.5rem; }
 .date-col { flex: 1; }
 .date-col > label {
-  display: block; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
-  color: rgba(253,248,240,.3); margin-bottom: 5px; text-align: center;
+  display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-soft); margin-bottom: 8px; text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 .date-col input {
-  width: 100%; background: rgba(255,255,255,.04);
-  border: 1px solid rgba(200,150,12,.25); border-radius: 6px;
-  color: var(--cream); font-family: inherit; font-size: 22px;
-  padding: 10px 6px; text-align: center; outline: none;
-  transition: border-color .3s;
+  width: 100%; background: var(--cream-warm);
+  border: 1px solid var(--line);
+  color: var(--text); font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 500;
+  padding: 12px 6px; text-align: center; outline: none;
+  transition: all .3s;
   -moz-appearance: textfield;
 }
 .date-col input::-webkit-outer-spin-button,
-.date-col input::-webkit-inner-spin-button { -webkit-appearance: none; }
-.date-col input:focus { border-color: var(--gold); }
-.err { color: #F87171; font-size: 12px; text-align: center; margin-bottom: .75rem; display: none; }
-.btn-calc { max-width: 100%; margin-top: .25rem; }
+.date-col input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.date-col input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); background: white; }
+.err { color: #B82E0C; font-size: 13px; text-align: center; margin-bottom: 1rem; display: none; font-style: italic; }
 
-/* Result card */
+/* Result Card */
 .el-card {
-  border-radius: 16px; padding: 2.5rem 2rem 2rem;
-  text-align: center; position: relative; overflow: hidden;
+  padding: 2.5rem 1.75rem;
+  text-align: center; position: relative;
+  border: 2px solid;
+  margin-bottom: 1rem;
   animation: revealCard .7s cubic-bezier(.22,.68,0,1.2) both;
 }
 @keyframes revealCard {
-  from { opacity: 0; transform: scale(.88) translateY(20px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
 }
-.el-glow {
-  position: absolute; width: 200px; height: 200px; border-radius: 50%;
-  top: -80px; left: 50%; transform: translateX(-50%);
-  filter: blur(60px); opacity: .25; pointer-events: none;
+.el-sym-circle {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 34px;
+  border: 2px solid currentColor;
 }
-.el-sym { font-size: 52px; display: block; margin-bottom: .5rem; }
 .el-tag {
-  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
-  opacity: .6; margin-bottom: .25rem;
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: .5rem; font-weight: 500;
 }
-.el-name { font-size: 30px; font-weight: normal; margin-bottom: .25rem; line-height: 1.2; }
+.el-name {
+  font-size: 44px; font-weight: 400; margin-bottom: .25rem; line-height: 1.1;
+  font-family: 'Cormorant Garamond', serif;
+}
 .el-archetype {
-  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-  opacity: .5; margin-bottom: 1.5rem;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 1.75rem;
+  opacity: .85;
 }
-.divider { width: 36px; height: 1px; margin: 0 auto 1.5rem; opacity: .35; }
+.divider-mini {
+  width: 40px; height: 1px; margin: 0 auto 1.5rem;
+  background: currentColor; opacity: .3;
+}
 .section-tag {
-  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-  opacity: .5; margin-bottom: .6rem;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: .8rem; font-weight: 500;
 }
-.el-poder { font-size: 14px; line-height: 1.8; opacity: .85; margin-bottom: 1.5rem; }
-.focus-list { list-style: none; text-align: left; }
+.el-poder {
+  font-size: 16px; line-height: 1.8; margin: 0 0 1.75rem 0;
+  font-style: italic;
+}
+.focus-list { list-style: none; text-align: left; padding: 0; }
 .focus-list li {
-  font-size: 13px; line-height: 1.6; padding: 7px 0 7px 1.5rem;
-  position: relative; opacity: .82;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 15px; line-height: 1.55; padding: 11px 0 11px 1.75rem;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: inherit;
 }
 .focus-list li:last-child { border-bottom: none; }
 .focus-list li::before {
   content: '✦'; position: absolute; left: 0;
-  font-size: 7px; top: 11px; opacity: .5;
+  font-size: 10px; top: 14px; opacity: .6;
 }
 .vida-num {
-  margin-top: 1.75rem; font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; opacity: .3;
+  margin-top: 1.75rem; font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; opacity: .55;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Element themes */
-.el-tierra { background: var(--t-bg); border: 1.5px solid var(--t-acc); color: var(--t-light); }
-.el-tierra .el-glow { background: var(--t-acc); }
-.el-tierra .divider { background: var(--t-acc); }
+.el-tierra { background: var(--t-bg); border-color: var(--t-acc); color: var(--t-text); }
+.el-tierra .el-sym-circle { background: var(--t-light); color: var(--t-acc); border-color: var(--t-acc); }
+.el-tierra .el-tag, .el-tierra .section-tag, .el-tierra .vida-num { color: var(--t-acc); }
+.el-tierra .focus-list li { border-color: rgba(92, 65, 9, 0.15); }
 
-.el-fuego { background: var(--f-bg); border: 1.5px solid var(--f-acc); color: var(--f-light); }
-.el-fuego .el-glow { background: var(--f-acc); }
-.el-fuego .divider { background: var(--f-acc); }
+.el-fuego { background: var(--f-bg); border-color: var(--f-acc); color: var(--f-text); }
+.el-fuego .el-sym-circle { background: var(--f-light); color: var(--f-acc); border-color: var(--f-acc); }
+.el-fuego .el-tag, .el-fuego .section-tag, .el-fuego .vida-num { color: var(--f-acc); }
+.el-fuego .focus-list li { border-color: rgba(122, 40, 24, 0.15); }
 
-.el-aire { background: var(--a-bg); border: 1.5px solid var(--a-acc); color: var(--a-light); }
-.el-aire .el-glow { background: var(--a-acc); }
-.el-aire .divider { background: var(--a-acc); }
+.el-aire { background: var(--a-bg); border-color: var(--a-acc); color: var(--a-text); }
+.el-aire .el-sym-circle { background: var(--a-light); color: var(--a-acc); border-color: var(--a-acc); }
+.el-aire .el-tag, .el-aire .section-tag, .el-aire .vida-num { color: var(--a-acc); }
+.el-aire .focus-list li { border-color: rgba(15, 77, 77, 0.15); }
 
-.el-agua { background: var(--g-bg); border: 1.5px solid var(--g-acc); color: var(--g-light); }
-.el-agua .el-glow { background: var(--g-acc); }
-.el-agua .divider { background: var(--g-acc); }
+.el-agua { background: var(--g-bg); border-color: var(--g-acc); color: var(--g-text); }
+.el-agua .el-sym-circle { background: var(--g-light); color: var(--g-acc); border-color: var(--g-acc); }
+.el-agua .el-tag, .el-agua .section-tag, .el-agua .vida-num { color: var(--g-acc); }
+.el-agua .focus-list li { border-color: rgba(31, 58, 96, 0.15); }
 
-.el-eter { background: var(--e-bg); border: 1.5px solid var(--e-acc); color: var(--e-light); }
-.el-eter .el-glow { background: var(--e-acc); }
-.el-eter .divider { background: var(--e-acc); }
+.el-eter { background: var(--e-bg); border-color: var(--e-acc); color: var(--e-text); }
+.el-eter .el-sym-circle { background: var(--e-light); color: var(--e-acc); border-color: var(--e-acc); }
+.el-eter .el-tag, .el-eter .section-tag, .el-eter .vida-num { color: var(--e-acc); }
+.el-eter .focus-list li { border-color: rgba(74, 44, 106, 0.15); }
 
-/* CTA */
-.cta-box {
-  margin-top: 2rem; padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,.08);
+/* CTA con imagen */
+.cta-section {
+  background: var(--cream-warm);
+  border: 1px solid var(--line);
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+.cta-image {
+  width: 100%; height: 240px;
+  background-image: linear-gradient(to bottom, rgba(245,239,224,0) 0%, rgba(245,239,224,0) 60%, rgba(250,245,230,0.95) 100%),
+                    url('mujeres-playa.jpg');
+  background-size: cover; background-position: center;
+  position: relative;
+}
+.cta-content {
+  padding: 0 1.75rem 2.25rem;
   text-align: center;
+  margin-top: -1px;
+}
+.cta-eyebrow {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--teal); font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: .75rem; font-weight: 500;
+}
+.cta-eyebrow::before, .cta-eyebrow::after {
+  content: '◈'; margin: 0 .5rem; opacity: .5; font-size: 8px;
+}
+.cta-headline-italic {
+  font-style: italic;
+  color: var(--gold-dark);
+  font-size: 22px;
+  margin-bottom: .25rem;
+  font-family: 'Cormorant Garamond', serif;
 }
 .cta-headline {
-  font-size: 17px; color: rgba(253,248,240,.85);
-  line-height: 1.55; margin-bottom: .5rem;
+  font-size: 30px; line-height: 1.15;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
 }
 .cta-detail {
-  font-size: 12px; color: rgba(253,248,240,.4);
-  line-height: 1.6; margin-bottom: 1.5rem;
+  font-size: 15px; color: var(--text-soft);
+  line-height: 1.7; margin: 1.25rem 0 1.75rem;
+  font-style: italic;
+}
+.cta-dates {
+  font-size: 13px; letter-spacing: 3px;
+  color: var(--text); margin-bottom: .35rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+.cta-location {
+  font-style: italic; font-size: 15px;
+  color: var(--text-soft); margin-bottom: 1.5rem;
+}
+.cta-mentors {
+  font-style: italic; font-size: 13px;
+  color: var(--gold-dark); margin-bottom: 1.75rem;
+  letter-spacing: .5px;
 }
 .btn-wa {
   display: inline-flex; align-items: center; gap: 10px;
-  background: #25D366; color: #fff; padding: 15px 30px;
-  border-radius: 50px; text-decoration: none; font-family: inherit;
-  font-size: 13px; letter-spacing: .5px; transition: all .3s;
+  background: #25D366; color: white; padding: 16px 26px;
+  border-radius: 50px; text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px; letter-spacing: 1px; transition: all .3s;
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
 }
 .btn-wa:hover { background: #1DA851; transform: scale(1.03); }
-.btn-wa svg { flex-shrink: 0; }
+
 .num-note {
-  margin-top: 1rem; font-size: 10px; letter-spacing: 1.5px;
-  text-transform: uppercase; color: rgba(253,248,240,.2); text-align: center;
+  margin-top: 1.5rem; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-soft); opacity: .5;
+  text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media (max-width: 480px) {
+  .wrap { padding: 1rem .75rem 2rem; }
+  .frame { padding: 2rem 1.25rem; }
+  .title { font-size: 36px; }
+  .el-name { font-size: 36px; }
+  .cta-headline { font-size: 26px; }
+  .pentagram-svg { width: 180px; height: 180px; }
+  .cta-image { height: 200px; }
 }
 </style>
 </head>
 <body>
 
-<canvas id="stars-canvas"></canvas>
-
 <div class="wrap">
+  <div class="frame">
 
   <!-- ── STEP 1: INTRO ── -->
   <div id="s-intro" class="step active">
-    <p class="eyebrow">✦ Ritual de Autoconocimiento ✦</p>
+    <p class="eyebrow">Inmersión Soberana</p>
+
+    <!-- Sun icon -->
+    <svg class="sun-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2BA8A8" stroke-width="1.2">
+      <circle cx="20" cy="20" r="6"/>
+      <circle cx="20" cy="20" r="1.5" fill="#2BA8A8"/>
+      <line x1="20" y1="4" x2="20" y2="9"/>
+      <line x1="20" y1="31" x2="20" y2="36"/>
+      <line x1="4" y1="20" x2="9" y2="20"/>
+      <line x1="31" y1="20" x2="36" y2="20"/>
+      <line x1="8.5" y1="8.5" x2="12" y2="12"/>
+      <line x1="28" y1="28" x2="31.5" y2="31.5"/>
+      <line x1="31.5" y1="8.5" x2="28" y2="12"/>
+      <line x1="12" y1="28" x2="8.5" y2="31.5"/>
+    </svg>
+
+    <!-- Pentagrama -->
+    <svg class="pentagram-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="110" cy="110" r="95" fill="none" stroke="#B8941F" stroke-width="1" opacity="0.5"/>
+      <circle cx="110" cy="110" r="88" fill="none" stroke="#B8941F" stroke-width="1" opacity="0.35"/>
+      <polygon points="110,30 131,95 197,95 144,134 165,200 110,159 55,200 76,134 23,95 89,95"
+               fill="none" stroke="#B8941F" stroke-width="1.5" opacity="0.85"/>
+      <text x="110" y="22" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Tierra</text>
+      <text x="14" y="92" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Fuego</text>
+      <text x="206" y="92" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Agua</text>
+      <text x="55" y="216" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Aire</text>
+      <text x="165" y="216" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Éter</text>
+      <circle cx="110" cy="110" r="2.5" fill="#B8941F"/>
+    </svg>
+
     <h1 class="title">Los 5 Centros<br>de Poder</h1>
+    <p class="title-italic">Ritual de Autoconocimiento</p>
+
     <p class="sub">
-      Cada mujer nace bajo la influencia de un elemento primordial.<br>
-      Descubre el tuyo y activa tu transformación soberana.
-    </p>
-
-    <div class="deck">
-      <div class="card-back"><span class="card-sym">◈</span><div class="card-line"></div></div>
-      <div class="card-back"><span class="card-sym">△</span><div class="card-line"></div></div>
-      <div class="card-back"><span class="card-sym">◇</span><div class="card-line"></div></div>
-      <div class="card-back"><span class="card-sym">≋</span><div class="card-line"></div></div>
-      <div class="card-back"><span class="card-sym">✦</span><div class="card-line"></div></div>
-    </div>
-
-    <p class="sub" style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(200,150,12,.5); margin-bottom:2.5rem;">
-      Tierra · Fuego · Aire · Agua · Éter
+      Cada mujer nace bajo la influencia<br>
+      de un elemento primordial.<br>
+      El tuyo guarda el código<br>
+      de tu transformación soberana.
     </p>
 
     <button class="btn" onclick="go('s-form')">Descubrir mi Centro de Poder</button>
+    <p style="text-align:center; margin-top:1rem; font-size:11px; color:var(--text-soft); letter-spacing:2px; font-family:'Helvetica Neue',Arial,sans-serif;">30 SEGUNDOS · GRATIS</p>
   </div>
 
   <!-- ── STEP 2: FORM ── -->
   <div id="s-form" class="step">
-    <p class="eyebrow">✦ Tu Código de Poder ✦</p>
-    <h1 class="title" style="font-size:30px;">¿Cuándo llegaste<br>al mundo?</h1>
-    <p class="sub">Tu fecha de nacimiento guarda el código de tu elemento primordial.</p>
+    <p class="eyebrow">Tu Código de Poder</p>
+    <h1 class="title" style="font-size:34px;">¿Cuándo llegaste<br>al mundo?</h1>
+    <p class="sub">Tu fecha de nacimiento guarda el código<br>de tu elemento primordial.</p>
 
     <div class="form-card">
       <span class="field-label">Fecha de nacimiento</span>
@@ -281,11 +409,11 @@ body {
         </div>
         <div class="date-col" style="flex:1.6;">
           <label>Año</label>
-          <input type="number" id="inp-y" min="1920" max="2008" placeholder="AAAA" style="font-size:18px;">
+          <input type="number" id="inp-y" min="1920" max="2008" placeholder="AAAA" style="font-size:20px;">
         </div>
       </div>
       <p class="err" id="err-msg">Por favor ingresa una fecha completa y válida.</p>
-      <button class="btn btn-calc" onclick="calcular()">Revelar mi Centro de Poder →</button>
+      <button class="btn" onclick="calcular()">Revelar mi Centro de Poder →</button>
     </div>
 
     <button class="btn-ghost" onclick="go('s-intro')">← Volver</button>
@@ -293,68 +421,54 @@ body {
 
   <!-- ── STEP 3: RESULT ── -->
   <div id="s-result" class="step">
-    <p class="eyebrow" id="r-eyebrow">✦ Tu Centro de Poder ✦</p>
+    <p class="eyebrow">Tu Centro de Poder</p>
 
     <div id="el-card" class="el-card">
-      <div class="el-glow"></div>
-      <span id="el-sym" class="el-sym"></span>
+      <div id="el-sym" class="el-sym-circle"></div>
       <p id="el-tag" class="el-tag"></p>
       <h2 id="el-name" class="el-name"></h2>
       <p id="el-arch" class="el-archetype"></p>
-      <div class="divider"></div>
+      <div class="divider-mini"></div>
       <p class="section-tag">Tu Poder Primordial</p>
       <p id="el-poder" class="el-poder"></p>
-      <div class="divider"></div>
+      <div class="divider-mini"></div>
       <p class="section-tag">Áreas de Transformación</p>
       <ul id="el-focus" class="focus-list"></ul>
       <p id="el-num" class="vida-num"></p>
     </div>
 
-    <div class="cta-box">
-      <p class="cta-headline">¿Lista para activar tu transformación<br>en el Retiro Soberana?</p>
-      <p class="cta-detail">
-        Un espacio sagrado donde mujeres de todo el mundo eligen<br>
-        vivir en plena libertad, poder y soberanía.
-      </p>
-      <a id="btn-wa" class="btn-wa"
-         href="https://wa.me/526271499074?text=Hola%2C+quiero+información+sobre+el+Retiro+Soberana+%F0%9F%8C%8A"
-         target="_blank">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.37A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.28c-.2.57-1.18 1.09-1.63 1.15-.42.06-.96.09-1.55-.1-.36-.11-.82-.26-1.4-.51-2.46-1.06-4.07-3.53-4.2-3.7-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.85-2.03.22-.24.47-.3.63-.3h.45c.14 0 .34-.05.52.4l.75 1.87c.06.15.02.33-.08.46l-.43.52c-.1.12-.21.25-.09.48.12.22.53.88 1.14 1.43.79.7 1.45.92 1.66 1.02.21.1.33.08.45-.05l.62-.72c.14-.17.28-.13.45-.07l1.8.85c.21.1.34.14.39.23.06.09.06.51-.14 1.08z"/>
-        </svg>
-        Quiero información del Retiro Soberana
-      </a>
+    <div class="cta-section">
+      <div class="cta-image"></div>
+      <div class="cta-content">
+        <p class="cta-eyebrow">Inmersión Soberana</p>
+        <p class="cta-headline-italic">¿Lista para activar tu transformación</p>
+        <h3 class="cta-headline">en comunidad sagrada?</h3>
+        <p class="cta-detail">
+          Un espacio sagrado donde mujeres de todo el mundo<br>
+          eligen vivir en plena libertad, poder y soberanía.
+        </p>
+        <p class="cta-dates">18 · 19 · 20 · 21 SEPTIEMBRE</p>
+        <p class="cta-location">Península de Yucatán · Telchac</p>
+        <p class="cta-mentors">Lettsy Cano · Francis Rivera</p>
+        <a id="btn-wa" class="btn-wa"
+           href="https://wa.me/526271499074?text=Hola%2C+quiero+información+sobre+la+Inmersión+Soberana+%F0%9F%8C%8A"
+           target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.37A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.28c-.2.57-1.18 1.09-1.63 1.15-.42.06-.96.09-1.55-.1-.36-.11-.82-.26-1.4-.51-2.46-1.06-4.07-3.53-4.2-3.7-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.85-2.03.22-.24.47-.3.63-.3h.45c.14 0 .34-.05.52.4l.75 1.87c.06.15.02.33-.08.46l-.43.52c-.1.12-.21.25-.09.48.12.22.53.88 1.14 1.43.79.7 1.45.92 1.66 1.02.21.1.33.08.45-.05l.62-.72c.14-.17.28-.13.45-.07l1.8.85c.21.1.34.14.39.23.06.09.06.51-.14 1.08z"/>
+          </svg>
+          Quiero información de la Inmersión Soberana
+        </a>
+      </div>
     </div>
 
     <p class="num-note">Calculado con numerología pitagórica del número de vida</p>
     <button class="btn-ghost" onclick="go('s-form')">← Calcular de nuevo</button>
   </div>
 
+  </div>
 </div>
 
 <script>
-// ── Stars canvas ──
-(function(){
-  const c = document.getElementById('stars-canvas');
-  const ctx = c.getContext('2d');
-  const resize = () => { c.width = innerWidth; c.height = innerHeight; };
-  resize(); window.addEventListener('resize', resize);
-  const stars = Array.from({length:120}, () => ({
-    x: Math.random(), y: Math.random(),
-    r: Math.random()*1.2+.3, a: Math.random(), da: (Math.random()*.6+.2)*(Math.random()<.5?1:-1)
-  }));
-  function draw() {
-    ctx.clearRect(0,0,c.width,c.height);
-    stars.forEach(s => {
-      s.a += s.da * .005; if(s.a>1)s.da=-Math.abs(s.da); if(s.a<0)s.da=Math.abs(s.da);
-      ctx.beginPath(); ctx.arc(s.x*c.width, s.y*c.height, s.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(255,255,255,${Math.max(0,Math.min(1,s.a*0.55))})`; ctx.fill();
-    }); requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// ── Step navigation ──
 function go(id) {
   document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
   const el = document.getElementById(id);
@@ -363,13 +477,11 @@ function go(id) {
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// ── Numerology ──
 function reduce9(n) {
   while (n > 9) n = String(n).split('').reduce((a,d)=>a+parseInt(d),0);
   return n;
 }
 
-// ── Element data ──
 const DATA = {
   tierra: {
     cls: 'el-tierra', sym: '◈',
@@ -435,7 +547,6 @@ const DATA = {
 
 const MAP = {1:'tierra',2:'agua',3:'fuego',4:'aire',5:'eter',6:'tierra',7:'agua',8:'fuego',9:'aire'};
 
-// ── Calculate ──
 function calcular() {
   const d = parseInt(document.getElementById('inp-d').value);
   const m = parseInt(document.getElementById('inp-m').value);
@@ -452,7 +563,6 @@ function calcular() {
   const key = MAP[vida];
   const el = DATA[key];
 
-  // Build card
   const card = document.getElementById('el-card');
   card.className = 'el-card ' + el.cls;
   document.getElementById('el-sym').textContent  = el.sym;
@@ -464,14 +574,12 @@ function calcular() {
   const ul = document.getElementById('el-focus');
   ul.innerHTML = el.focus.map(f=>`<li>${f}</li>`).join('');
 
-  // CTA with personalized text
-  const msg = encodeURIComponent(`Hola, acabo de descubrir que mi Centro de Poder es ${el.name} (número de vida ${vida}) y quiero información sobre el Retiro Soberana 🌊`);
+  const msg = encodeURIComponent(`Hola, acabo de descubrir que mi Centro de Poder es ${el.name} (número de vida ${vida}) y quiero información sobre la Inmersión Soberana 🌊`);
   document.getElementById('btn-wa').href = `https://wa.me/526271499074?text=${msg}`;
 
   go('s-result');
 }
 
-// Allow Enter key in inputs
 document.addEventListener('keydown', e => {
   if (e.key==='Enter' && document.getElementById('s-form').classList.contains('active')) calcular();
 });
