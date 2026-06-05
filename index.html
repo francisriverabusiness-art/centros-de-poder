@@ -3,394 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Los 5 Centros de Poder — Inmersión Soberana</title>
+<title>Descubre tu Centro de Poder — Inmersión Soberana</title>
+
+<!-- SEO & OG Tags -->
+<meta name="description" content="Descubre tu elemento primordial en 30 segundos. Tu fecha de nacimiento guarda el código de tu transformación soberana. Ritual gratuito.">
+<meta property="og:title" content="Descubre tu Centro de Poder — Inmersión Soberana">
+<meta property="og:description" content="Cada mujer nace bajo la influencia de un elemento primordial. El tuyo guarda el código de tu transformación. Descúbrelo gratis en 30 segundos.">
+<meta property="og:image" content="https://francisriverabusiness-art.github.io/centros-de-poder/og-image.jpg">
+<meta property="og:url" content="https://francisriverabusiness-art.github.io/centros-de-poder/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ════════════════════════════════════════
+     META PIXEL — Reemplaza XXXXXXXXXXXXXXXXX
+     con tu ID de píxel de Meta
+     ════════════════════════════════════════ -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'XXXXXXXXXXXXXXXXX'); // ← PON AQUÍ TU PIXEL ID
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+
 <style>
 :root {
-  /* Paleta SOBERANA */
   --teal: #2BA8A8;
   --teal-dark: #1F7F7F;
-  --teal-soft: rgba(43, 168, 168, 0.15);
+  --teal-soft: rgba(43,168,168,0.15);
   --gold: #B8941F;
   --gold-dark: #8A6E10;
-  --gold-soft: rgba(184, 148, 31, 0.2);
+  --gold-soft: rgba(184,148,31,0.2);
   --cream: #F5EFE0;
   --cream-warm: #FAF5E6;
   --cream-deep: #EDE5D1;
   --text: #3D2817;
   --text-soft: #6B5440;
-  --line: rgba(184, 148, 31, 0.3);
+  --line: rgba(184,148,31,0.3);
 
-  /* Colores de elementos según marca SOBERANA */
-  --t-bg: #FAF3E0; --t-acc: #B8941F; --t-text: #5C4109; --t-light: #F5E9C8;
-  --f-bg: #FDEEEA; --f-acc: #D4583E; --f-text: #7A2818; --f-light: #FAD7CC;
-  --a-bg: #E6F4F4; --a-acc: #2BA8A8; --a-text: #0F4D4D; --a-light: #BFE2E2;
-  --g-bg: #E8EFF8; --g-acc: #4A6FA5; --g-text: #1F3A60; --g-light: #C9D7EE;
-  --e-bg: #F0E8F5; --e-acc: #8C6BB1; --e-text: #4A2C6A; --e-light: #DECCE8;
+  --t-bg:#FAF3E0; --t-acc:#B8941F; --t-text:#5C4109; --t-light:#F5E9C8;
+  --f-bg:#FDEEEA; --f-acc:#D4583E; --f-text:#7A2818; --f-light:#FAD7CC;
+  --a-bg:#E6F4F4; --a-acc:#2BA8A8; --a-text:#0F4D4D; --a-light:#BFE2E2;
+  --g-bg:#E8EFF8; --g-acc:#4A6FA5; --g-text:#1F3A60; --g-light:#C9D7EE;
+  --e-bg:#F0E8F5; --e-acc:#8C6BB1; --e-text:#4A2C6A; --e-light:#DECCE8;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--cream);
-  color: var(--text);
-  font-family: 'Cormorant Garamond', 'Playfair Display', 'Palatino Linotype', Georgia, serif;
-  min-height: 100vh;
-  overflow-x: hidden;
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:var(--cream);color:var(--text);
+  font-family:'Cormorant Garamond','Palatino Linotype',Georgia,serif;
+  min-height:100vh;overflow-x:hidden;
 }
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background:
-    radial-gradient(ellipse at top, rgba(43,168,168,0.04), transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(184,148,31,0.04), transparent 50%);
-  pointer-events: none; z-index: 0;
+body::before{
+  content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse at top,rgba(43,168,168,0.04),transparent 50%),
+             radial-gradient(ellipse at bottom,rgba(184,148,31,0.04),transparent 50%);
+  pointer-events:none;z-index:0;
 }
+.wrap{position:relative;z-index:1;width:100%;max-width:580px;margin:0 auto;padding:2rem 1.25rem 3rem;}
+.frame{position:relative;border-top:8px solid var(--gold);border-bottom:8px solid var(--gold);background:var(--cream-warm);padding:2.5rem 1.75rem;box-shadow:0 4px 30px rgba(61,40,23,0.08);}
 
-.wrap {
-  position: relative; z-index: 1;
-  width: 100%; max-width: 580px;
-  margin: 0 auto; padding: 2rem 1.25rem 3rem;
-}
-
-/* Borde decorativo */
-.frame {
-  position: relative;
-  border-top: 8px solid var(--gold);
-  border-bottom: 8px solid var(--gold);
-  background: var(--cream-warm);
-  padding: 2.5rem 1.75rem;
-  box-shadow: 0 4px 30px rgba(61, 40, 23, 0.08);
-}
+/* Progress bar */
+.progress{display:flex;gap:6px;justify-content:center;margin-bottom:2rem;}
+.progress-dot{width:8px;height:8px;border-radius:50%;background:var(--cream-deep);transition:all .3s;}
+.progress-dot.active{background:var(--teal);transform:scale(1.2);}
+.progress-dot.done{background:var(--gold);}
 
 /* Steps */
-.step { display: none; animation: fadeUp .55s ease both; }
-.step.active { display: block; }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+.step{display:none;animation:fadeUp .55s ease both;}
+.step.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-/* Tipografía */
-.eyebrow {
-  text-align: center; font-size: 11px; letter-spacing: 5px;
-  text-transform: uppercase; color: var(--teal);
-  font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 500;
-  margin-bottom: 1.25rem;
-}
-.eyebrow::before, .eyebrow::after {
-  content: '◈'; margin: 0 .6rem; opacity: .6; font-size: 9px;
-}
-.title {
-  text-align: center; font-size: 44px; font-weight: 400;
-  color: var(--teal); line-height: 1.1; margin-bottom: .35rem;
-  letter-spacing: -0.5px;
-}
-.title-italic {
-  text-align: center; font-style: italic;
-  font-size: 18px; color: var(--gold-dark);
-  margin-bottom: 1.5rem; font-weight: 400;
-}
-.sub {
-  text-align: center; font-size: 16px;
-  color: var(--text); line-height: 1.75; margin-bottom: 2rem;
-  font-style: italic;
-}
+/* Typography */
+.eyebrow{text-align:center;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--teal);font-family:'Manrope',Arial,sans-serif;font-weight:500;margin-bottom:1.25rem;}
+.eyebrow::before,.eyebrow::after{content:'◈';margin:0 .6rem;opacity:.6;font-size:9px;}
+.title{text-align:center;font-size:44px;font-weight:400;color:var(--teal);line-height:1.1;margin-bottom:.35rem;letter-spacing:-0.5px;}
+.title-italic{text-align:center;font-style:italic;font-size:18px;color:var(--gold-dark);margin-bottom:1.5rem;font-weight:400;}
+.sub{text-align:center;font-size:16px;color:var(--text);line-height:1.75;margin-bottom:2rem;font-style:italic;}
 
-/* Pentagrama SVG */
-.pentagram-svg {
-  display: block; margin: .5rem auto 1.5rem;
-  width: 220px; height: 220px;
-}
-
-/* Sun icon */
-.sun-icon {
-  display: block; margin: 0 auto 1rem;
-  width: 40px; height: 40px;
-}
+/* Pentagram */
+.pentagram-svg{display:block;margin:.5rem auto 1.5rem;width:220px;height:220px;}
+.sun-icon{display:block;margin:0 auto 1rem;width:40px;height:40px;}
 
 /* Buttons */
-.btn {
-  display: block; width: 100%; max-width: 340px; margin: 0 auto;
-  padding: 16px 32px; background: var(--teal);
-  border: none; border-radius: 0;
-  color: white; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;
-  letter-spacing: 3px; text-transform: uppercase; cursor: pointer;
-  transition: all .3s ease; font-weight: 500;
-}
-.btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(43,168,168,0.3); }
-
-.btn-ghost {
-  display: block; background: none; border: none;
-  color: var(--text-soft); font-family: inherit; font-size: 14px;
-  cursor: pointer; text-align: center; margin: 1.5rem auto 0; padding: 8px;
-  font-style: italic; opacity: .7;
-  transition: opacity .3s, color .3s;
-}
-.btn-ghost:hover { opacity: 1; color: var(--teal); }
+.btn{display:block;width:100%;max-width:340px;margin:0 auto;padding:16px 32px;background:var(--teal);border:none;border-radius:0;color:white;font-family:'Manrope',Arial,sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;font-weight:500;}
+.btn:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 4px 12px rgba(43,168,168,0.3);}
+.btn-ghost{display:block;background:none;border:none;color:var(--text-soft);font-family:inherit;font-size:14px;cursor:pointer;text-align:center;margin:1.5rem auto 0;padding:8px;font-style:italic;opacity:.7;transition:opacity .3s,color .3s;}
+.btn-ghost:hover{opacity:1;color:var(--teal);}
 
 /* Form */
-.form-card {
-  background: white;
-  border: 1px solid var(--line);
-  padding: 2rem 1.5rem; margin: 1.5rem 0;
-}
-.field-label {
-  display: block; text-align: center; font-size: 11px; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--gold-dark);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  margin-bottom: 1.5rem;
-}
-.date-row { display: flex; gap: 12px; margin-bottom: 1.5rem; }
-.date-col { flex: 1; }
-.date-col > label {
-  display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--text-soft); margin-bottom: 8px; text-align: center;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-.date-col input {
-  width: 100%; background: var(--cream-warm);
-  border: 1px solid var(--line);
-  color: var(--text); font-family: 'Cormorant Garamond', serif;
-  font-size: 24px; font-weight: 500;
-  padding: 12px 6px; text-align: center; outline: none;
-  transition: all .3s;
-  -moz-appearance: textfield;
-}
-.date-col input::-webkit-outer-spin-button,
-.date-col input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-.date-col input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); background: white; }
-.err { color: #B82E0C; font-size: 13px; text-align: center; margin-bottom: 1rem; display: none; font-style: italic; }
+.form-card{background:white;border:1px solid var(--line);padding:2rem 1.5rem;margin:1.5rem 0;}
+.field-label{display:block;text-align:center;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);font-family:'Manrope',Arial,sans-serif;margin-bottom:1.5rem;}
+.date-row{display:flex;gap:12px;margin-bottom:1.5rem;}
+.date-col{flex:1;}
+.date-col>label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px;text-align:center;font-family:'Manrope',Arial,sans-serif;}
+.date-col input{width:100%;background:var(--cream-warm);border:1px solid var(--line);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;padding:12px 6px;text-align:center;outline:none;transition:all .3s;-moz-appearance:textfield;}
+.date-col input::-webkit-outer-spin-button,.date-col input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+.date-col input:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft);background:white;}
+
+/* Email step */
+.email-card{background:white;border:1px solid var(--line);padding:2rem 1.5rem;margin:1.5rem 0;}
+.email-card .input-group{margin-bottom:1.25rem;}
+.email-card label{display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);font-family:'Manrope',Arial,sans-serif;margin-bottom:8px;}
+.email-card input{width:100%;background:var(--cream-warm);border:1px solid var(--line);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:20px;padding:14px 16px;outline:none;transition:all .3s;border-radius:0;}
+.email-card input:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft);background:white;}
+.email-card input::placeholder{color:var(--text-soft);opacity:.5;}
+.privacy-note{text-align:center;font-size:11px;color:var(--text-soft);opacity:.6;margin-top:1rem;font-family:'Manrope',Arial,sans-serif;letter-spacing:.5px;}
+
+.err{color:#B82E0C;font-size:13px;text-align:center;margin-bottom:1rem;display:none;font-style:italic;}
+
+/* Loading spinner */
+.loading{text-align:center;padding:2rem;display:none;}
+.loading-text{font-style:italic;color:var(--teal);font-size:18px;animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.4;}50%{opacity:1;}}
 
 /* Result Card */
-.el-card {
-  padding: 2.5rem 1.75rem;
-  text-align: center; position: relative;
-  border: 2px solid;
-  margin-bottom: 1rem;
-  animation: revealCard .7s cubic-bezier(.22,.68,0,1.2) both;
-}
-@keyframes revealCard {
-  from { opacity: 0; transform: scale(.9); }
-  to   { opacity: 1; transform: scale(1); }
-}
-.el-sym-circle {
-  width: 76px; height: 76px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.25rem;
-  font-size: 34px;
-  border: 2px solid currentColor;
-}
-.el-tag {
-  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  margin-bottom: .5rem; font-weight: 500;
-}
-.el-name {
-  font-size: 44px; font-weight: 400; margin-bottom: .25rem; line-height: 1.1;
-  font-family: 'Cormorant Garamond', serif;
-}
-.el-archetype {
-  font-style: italic;
-  font-size: 16px;
-  margin-bottom: 1.75rem;
-  opacity: .85;
-}
-.divider-mini {
-  width: 40px; height: 1px; margin: 0 auto 1.5rem;
-  background: currentColor; opacity: .3;
-}
-.section-tag {
-  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  margin-bottom: .8rem; font-weight: 500;
-}
-.el-poder {
-  font-size: 16px; line-height: 1.8; margin: 0 0 1.75rem 0;
-  font-style: italic;
-}
-.focus-list { list-style: none; text-align: left; padding: 0; }
-.focus-list li {
-  font-size: 15px; line-height: 1.55; padding: 11px 0 11px 1.75rem;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: inherit;
-}
-.focus-list li:last-child { border-bottom: none; }
-.focus-list li::before {
-  content: '✦'; position: absolute; left: 0;
-  font-size: 10px; top: 14px; opacity: .6;
-}
-.vida-num {
-  margin-top: 1.75rem; font-size: 10px; letter-spacing: 3px;
-  text-transform: uppercase; opacity: .55;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+.el-card{padding:2.5rem 1.75rem;text-align:center;position:relative;border:2px solid;margin-bottom:1rem;animation:revealCard .7s cubic-bezier(.22,.68,0,1.2) both;}
+@keyframes revealCard{from{opacity:0;transform:scale(.9);}to{opacity:1;transform:scale(1);}}
+.el-sym-circle{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:34px;border:2px solid currentColor;}
+.el-tag{font-size:11px;letter-spacing:4px;text-transform:uppercase;font-family:'Manrope',Arial,sans-serif;margin-bottom:.5rem;font-weight:500;}
+.el-name{font-size:44px;font-weight:400;margin-bottom:.25rem;line-height:1.1;font-family:'Cormorant Garamond',serif;}
+.el-archetype{font-style:italic;font-size:16px;margin-bottom:1.75rem;opacity:.85;}
+.divider-mini{width:40px;height:1px;margin:0 auto 1.5rem;background:currentColor;opacity:.3;}
+.section-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:'Manrope',Arial,sans-serif;margin-bottom:.8rem;font-weight:500;}
+.el-poder{font-size:16px;line-height:1.8;margin:0 0 1.75rem;font-style:italic;}
+.focus-list{list-style:none;text-align:left;padding:0;}
+.focus-list li{font-size:15px;line-height:1.55;padding:11px 0 11px 1.75rem;position:relative;border-bottom:1px solid;border-color:inherit;}
+.focus-list li:last-child{border-bottom:none;}
+.focus-list li::before{content:'✦';position:absolute;left:0;font-size:10px;top:14px;opacity:.6;}
+.vida-num{margin-top:1.75rem;font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.55;font-family:'Manrope',Arial,sans-serif;}
+
+/* Share button */
+.share-row{display:flex;gap:10px;justify-content:center;margin:1.25rem 0 0;}
+.btn-share{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--line);background:white;color:var(--text);font-family:'Manrope',Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;}
+.btn-share:hover{border-color:var(--teal);color:var(--teal);}
 
 /* Element themes */
-.el-tierra { background: var(--t-bg); border-color: var(--t-acc); color: var(--t-text); }
-.el-tierra .el-sym-circle { background: var(--t-light); color: var(--t-acc); border-color: var(--t-acc); }
-.el-tierra .el-tag, .el-tierra .section-tag, .el-tierra .vida-num { color: var(--t-acc); }
-.el-tierra .focus-list li { border-color: rgba(92, 65, 9, 0.15); }
+.el-tierra{background:var(--t-bg);border-color:var(--t-acc);color:var(--t-text);}
+.el-tierra .el-sym-circle{background:var(--t-light);color:var(--t-acc);border-color:var(--t-acc);}
+.el-tierra .el-tag,.el-tierra .section-tag,.el-tierra .vida-num{color:var(--t-acc);}
+.el-tierra .focus-list li{border-color:rgba(92,65,9,0.15);}
 
-.el-fuego { background: var(--f-bg); border-color: var(--f-acc); color: var(--f-text); }
-.el-fuego .el-sym-circle { background: var(--f-light); color: var(--f-acc); border-color: var(--f-acc); }
-.el-fuego .el-tag, .el-fuego .section-tag, .el-fuego .vida-num { color: var(--f-acc); }
-.el-fuego .focus-list li { border-color: rgba(122, 40, 24, 0.15); }
+.el-fuego{background:var(--f-bg);border-color:var(--f-acc);color:var(--f-text);}
+.el-fuego .el-sym-circle{background:var(--f-light);color:var(--f-acc);border-color:var(--f-acc);}
+.el-fuego .el-tag,.el-fuego .section-tag,.el-fuego .vida-num{color:var(--f-acc);}
+.el-fuego .focus-list li{border-color:rgba(122,40,24,0.15);}
 
-.el-aire { background: var(--a-bg); border-color: var(--a-acc); color: var(--a-text); }
-.el-aire .el-sym-circle { background: var(--a-light); color: var(--a-acc); border-color: var(--a-acc); }
-.el-aire .el-tag, .el-aire .section-tag, .el-aire .vida-num { color: var(--a-acc); }
-.el-aire .focus-list li { border-color: rgba(15, 77, 77, 0.15); }
+.el-aire{background:var(--a-bg);border-color:var(--a-acc);color:var(--a-text);}
+.el-aire .el-sym-circle{background:var(--a-light);color:var(--a-acc);border-color:var(--a-acc);}
+.el-aire .el-tag,.el-aire .section-tag,.el-aire .vida-num{color:var(--a-acc);}
+.el-aire .focus-list li{border-color:rgba(15,77,77,0.15);}
 
-.el-agua { background: var(--g-bg); border-color: var(--g-acc); color: var(--g-text); }
-.el-agua .el-sym-circle { background: var(--g-light); color: var(--g-acc); border-color: var(--g-acc); }
-.el-agua .el-tag, .el-agua .section-tag, .el-agua .vida-num { color: var(--g-acc); }
-.el-agua .focus-list li { border-color: rgba(31, 58, 96, 0.15); }
+.el-agua{background:var(--g-bg);border-color:var(--g-acc);color:var(--g-text);}
+.el-agua .el-sym-circle{background:var(--g-light);color:var(--g-acc);border-color:var(--g-acc);}
+.el-agua .el-tag,.el-agua .section-tag,.el-agua .vida-num{color:var(--g-acc);}
+.el-agua .focus-list li{border-color:rgba(31,58,96,0.15);}
 
-.el-eter { background: var(--e-bg); border-color: var(--e-acc); color: var(--e-text); }
-.el-eter .el-sym-circle { background: var(--e-light); color: var(--e-acc); border-color: var(--e-acc); }
-.el-eter .el-tag, .el-eter .section-tag, .el-eter .vida-num { color: var(--e-acc); }
-.el-eter .focus-list li { border-color: rgba(74, 44, 106, 0.15); }
+.el-eter{background:var(--e-bg);border-color:var(--e-acc);color:var(--e-text);}
+.el-eter .el-sym-circle{background:var(--e-light);color:var(--e-acc);border-color:var(--e-acc);}
+.el-eter .el-tag,.el-eter .section-tag,.el-eter .vida-num{color:var(--e-acc);}
+.el-eter .focus-list li{border-color:rgba(74,44,106,0.15);}
 
-/* CTA con imagen */
-.cta-section {
-  background: var(--cream-warm);
-  border: 1px solid var(--line);
-  margin-top: 1.5rem;
-  overflow: hidden;
-}
-.cta-image {
-  width: 100%; height: 240px;
-  background-image: linear-gradient(to bottom, rgba(245,239,224,0) 0%, rgba(245,239,224,0) 60%, rgba(250,245,230,0.95) 100%),
-                    url('mujeres-playa.jpg');
-  background-size: cover; background-position: center;
-  position: relative;
-}
-.cta-content {
-  padding: 0 1.75rem 2.25rem;
-  text-align: center;
-  margin-top: -1px;
-}
-.cta-eyebrow {
-  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
-  color: var(--teal); font-family: 'Helvetica Neue', Arial, sans-serif;
-  margin-bottom: .75rem; font-weight: 500;
-}
-.cta-eyebrow::before, .cta-eyebrow::after {
-  content: '◈'; margin: 0 .5rem; opacity: .5; font-size: 8px;
-}
-.cta-headline-italic {
-  font-style: italic;
-  color: var(--gold-dark);
-  font-size: 22px;
-  margin-bottom: .25rem;
-  font-family: 'Cormorant Garamond', serif;
-}
-.cta-headline {
-  font-size: 30px; line-height: 1.15;
-  color: var(--teal);
-  margin-bottom: 1rem;
-  font-weight: 400;
-  font-family: 'Cormorant Garamond', serif;
-}
-.cta-detail {
-  font-size: 15px; color: var(--text-soft);
-  line-height: 1.7; margin: 1.25rem 0 1.75rem;
-  font-style: italic;
-}
-.cta-dates {
-  font-size: 13px; letter-spacing: 3px;
-  color: var(--text); margin-bottom: .35rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
-}
-.cta-location {
-  font-style: italic; font-size: 15px;
-  color: var(--text-soft); margin-bottom: 1.5rem;
-}
-.cta-mentors {
-  font-style: italic; font-size: 13px;
-  color: var(--gold-dark); margin-bottom: 1.75rem;
-  letter-spacing: .5px;
-}
-.btn-wa {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: #25D366; color: white; padding: 16px 26px;
-  border-radius: 50px; text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 13px; letter-spacing: 1px; transition: all .3s;
-  font-weight: 500;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
-}
-.btn-wa:hover { background: #1DA851; transform: scale(1.03); }
+/* CTA Section */
+.cta-section{background:var(--cream-warm);border:1px solid var(--line);margin-top:1.5rem;overflow:hidden;}
+.cta-image{width:100%;height:240px;background-image:linear-gradient(to bottom,rgba(245,239,224,0) 0%,rgba(245,239,224,0) 60%,rgba(250,245,230,0.95) 100%),url('mujeres-playa.jpg');background-size:cover;background-position:center;}
+.cta-content{padding:0 1.75rem 2.25rem;text-align:center;margin-top:-1px;}
+.cta-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);font-family:'Manrope',Arial,sans-serif;margin-bottom:.75rem;font-weight:500;}
+.cta-eyebrow::before,.cta-eyebrow::after{content:'◈';margin:0 .5rem;opacity:.5;font-size:8px;}
+.cta-headline-italic{font-style:italic;color:var(--gold-dark);font-size:22px;margin-bottom:.25rem;}
+.cta-headline{font-size:30px;line-height:1.15;color:var(--teal);margin-bottom:1rem;font-weight:400;}
 
-.num-note {
-  margin-top: 1.5rem; font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--text-soft); opacity: .5;
-  text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+/* Urgency badge */
+.urgency{display:inline-flex;align-items:center;gap:8px;background:#FFF5F0;border:1px solid #D4583E;padding:8px 16px;margin-bottom:1.25rem;}
+.urgency-dot{width:8px;height:8px;border-radius:50%;background:#D4583E;animation:blink 1.5s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.urgency-text{font-size:12px;letter-spacing:1px;color:#7A2818;font-family:'Manrope',Arial,sans-serif;font-weight:600;}
 
-@media (max-width: 480px) {
-  .wrap { padding: 1rem .75rem 2rem; }
-  .frame { padding: 2rem 1.25rem; }
-  .title { font-size: 36px; }
-  .el-name { font-size: 36px; }
-  .cta-headline { font-size: 26px; }
-  .pentagram-svg { width: 180px; height: 180px; }
-  .cta-image { height: 200px; }
+.cta-detail{font-size:15px;color:var(--text-soft);line-height:1.7;margin:0 0 1.25rem;font-style:italic;}
+.cta-dates{font-size:13px;letter-spacing:3px;color:var(--text);margin-bottom:.35rem;font-family:'Manrope',Arial,sans-serif;font-weight:500;}
+.cta-location{font-style:italic;font-size:15px;color:var(--text-soft);margin-bottom:.35rem;}
+.cta-mentors{font-style:italic;font-size:13px;color:var(--gold-dark);margin-bottom:1.75rem;letter-spacing:.5px;}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;padding:16px 26px;border-radius:50px;text-decoration:none;font-family:'Manrope',Arial,sans-serif;font-size:13px;letter-spacing:1px;transition:all .3s;font-weight:500;box-shadow:0 4px 14px rgba(37,211,102,0.25);}
+.btn-wa:hover{background:#1DA851;transform:scale(1.03);}
+
+.num-note{margin-top:1.5rem;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);opacity:.5;text-align:center;font-family:'Manrope',Arial,sans-serif;}
+
+@media(max-width:480px){
+  .wrap{padding:1rem .75rem 2rem;}
+  .frame{padding:2rem 1.25rem;}
+  .title{font-size:36px;}
+  .el-name{font-size:36px;}
+  .cta-headline{font-size:26px;}
+  .pentagram-svg{width:180px;height:180px;}
+  .cta-image{height:200px;}
 }
 </style>
 </head>
 <body>
 
 <div class="wrap">
-  <div class="frame">
+ <div class="frame">
+
+  <!-- Progress dots -->
+  <div class="progress">
+    <div class="progress-dot active" id="dot-1"></div>
+    <div class="progress-dot" id="dot-2"></div>
+    <div class="progress-dot" id="dot-3"></div>
+    <div class="progress-dot" id="dot-4"></div>
+  </div>
 
   <!-- ── STEP 1: INTRO ── -->
   <div id="s-intro" class="step active">
     <p class="eyebrow">Inmersión Soberana</p>
 
-    <!-- Sun icon -->
     <svg class="sun-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2BA8A8" stroke-width="1.2">
       <circle cx="20" cy="20" r="6"/>
       <circle cx="20" cy="20" r="1.5" fill="#2BA8A8"/>
-      <line x1="20" y1="4" x2="20" y2="9"/>
-      <line x1="20" y1="31" x2="20" y2="36"/>
-      <line x1="4" y1="20" x2="9" y2="20"/>
-      <line x1="31" y1="20" x2="36" y2="20"/>
-      <line x1="8.5" y1="8.5" x2="12" y2="12"/>
-      <line x1="28" y1="28" x2="31.5" y2="31.5"/>
-      <line x1="31.5" y1="8.5" x2="28" y2="12"/>
-      <line x1="12" y1="28" x2="8.5" y2="31.5"/>
+      <line x1="20" y1="4" x2="20" y2="9"/><line x1="20" y1="31" x2="20" y2="36"/>
+      <line x1="4" y1="20" x2="9" y2="20"/><line x1="31" y1="20" x2="36" y2="20"/>
+      <line x1="8.5" y1="8.5" x2="12" y2="12"/><line x1="28" y1="28" x2="31.5" y2="31.5"/>
+      <line x1="31.5" y1="8.5" x2="28" y2="12"/><line x1="12" y1="28" x2="8.5" y2="31.5"/>
     </svg>
 
-    <!-- Pentagrama -->
     <svg class="pentagram-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
       <circle cx="110" cy="110" r="95" fill="none" stroke="#B8941F" stroke-width="1" opacity="0.5"/>
       <circle cx="110" cy="110" r="88" fill="none" stroke="#B8941F" stroke-width="1" opacity="0.35"/>
-      <polygon points="110,30 131,95 197,95 144,134 165,200 110,159 55,200 76,134 23,95 89,95"
-               fill="none" stroke="#B8941F" stroke-width="1.5" opacity="0.85"/>
-      <text x="110" y="22" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Tierra</text>
-      <text x="14" y="92" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Fuego</text>
-      <text x="206" y="92" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Agua</text>
-      <text x="55" y="216" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Aire</text>
-      <text x="165" y="216" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond, serif">Éter</text>
+      <polygon points="110,30 131,95 197,95 144,134 165,200 110,159 55,200 76,134 23,95 89,95" fill="none" stroke="#B8941F" stroke-width="1.5" opacity="0.85"/>
+      <text x="110" y="22" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond,serif">Tierra</text>
+      <text x="14" y="92" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond,serif">Fuego</text>
+      <text x="206" y="92" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond,serif">Agua</text>
+      <text x="55" y="216" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond,serif">Aire</text>
+      <text x="165" y="216" text-anchor="middle" fill="#2BA8A8" font-size="13" font-style="italic" font-family="Cormorant Garamond,serif">Éter</text>
       <circle cx="110" cy="110" r="2.5" fill="#B8941F"/>
     </svg>
 
     <h1 class="title">Los 5 Centros<br>de Poder</h1>
     <p class="title-italic">Ritual de Autoconocimiento</p>
+    <p class="sub">Cada mujer nace bajo la influencia<br>de un elemento primordial.<br>El tuyo guarda el código<br>de tu transformación soberana.</p>
 
-    <p class="sub">
-      Cada mujer nace bajo la influencia<br>
-      de un elemento primordial.<br>
-      El tuyo guarda el código<br>
-      de tu transformación soberana.
-    </p>
-
-    <button class="btn" onclick="go('s-form')">Descubrir mi Centro de Poder</button>
-    <p style="text-align:center; margin-top:1rem; font-size:11px; color:var(--text-soft); letter-spacing:2px; font-family:'Helvetica Neue',Arial,sans-serif;">30 SEGUNDOS · GRATIS</p>
+    <button class="btn" onclick="go('s-form',1)">Descubrir mi Centro de Poder</button>
+    <p style="text-align:center;margin-top:1rem;font-size:11px;color:var(--text-soft);letter-spacing:2px;font-family:'Manrope',Arial,sans-serif;">30 SEGUNDOS · GRATIS</p>
   </div>
 
-  <!-- ── STEP 2: FORM ── -->
+  <!-- ── STEP 2: FECHA ── -->
   <div id="s-form" class="step">
     <p class="eyebrow">Tu Código de Poder</p>
     <h1 class="title" style="font-size:34px;">¿Cuándo llegaste<br>al mundo?</h1>
@@ -409,19 +272,55 @@ body::before {
         </div>
         <div class="date-col" style="flex:1.6;">
           <label>Año</label>
-          <input type="number" id="inp-y" min="1920" max="2008" placeholder="AAAA" style="font-size:20px;">
+          <input type="number" id="inp-y" min="1920" placeholder="AAAA" style="font-size:20px;">
         </div>
       </div>
       <p class="err" id="err-msg">Por favor ingresa una fecha completa y válida.</p>
-      <button class="btn" onclick="calcular()">Revelar mi Centro de Poder →</button>
+      <button class="btn" onclick="validarFecha()">Continuar →</button>
     </div>
-
-    <button class="btn-ghost" onclick="go('s-intro')">← Volver</button>
+    <button class="btn-ghost" onclick="go('s-intro',0)">← Volver</button>
   </div>
 
-  <!-- ── STEP 3: RESULT ── -->
+  <!-- ── STEP 3: EMAIL ── -->
+  <div id="s-email" class="step">
+    <p class="eyebrow">Tu lectura está lista</p>
+    <h1 class="title" style="font-size:32px;">¿A dónde<br>te la enviamos?</h1>
+    <p class="sub">Ingresa tu nombre y correo<br>para recibir tu lectura completa<br>y activaciones de tu elemento.</p>
+
+    <div class="email-card">
+      <div class="input-group">
+        <label>Tu nombre</label>
+        <input type="text" id="inp-nombre" placeholder="Nombre" autocomplete="given-name">
+      </div>
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input type="email" id="inp-email" placeholder="tucorreo@email.com" autocomplete="email">
+      </div>
+      <p class="err" id="err-email">Por favor ingresa un nombre y correo válido.</p>
+      <button class="btn" onclick="revelarResultado()">Revelar mi Centro de Poder →</button>
+      <p class="privacy-note">🔒 Tu información es privada. Sin spam.</p>
+    </div>
+    <button class="btn-ghost" onclick="go('s-form',1)">← Volver</button>
+  </div>
+
+  <!-- Loading -->
+  <div id="s-loading" class="step">
+    <div class="loading" style="display:block;padding:4rem 2rem;">
+      <svg class="sun-icon" style="margin-bottom:1.5rem;animation:rotate 3s linear infinite;" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2BA8A8" stroke-width="1.2">
+        <circle cx="20" cy="20" r="6"/>
+        <circle cx="20" cy="20" r="1.5" fill="#2BA8A8"/>
+        <line x1="20" y1="4" x2="20" y2="9"/><line x1="20" y1="31" x2="20" y2="36"/>
+        <line x1="4" y1="20" x2="9" y2="20"/><line x1="31" y1="20" x2="36" y2="20"/>
+        <line x1="8.5" y1="8.5" x2="12" y2="12"/><line x1="28" y1="28" x2="31.5" y2="31.5"/>
+        <line x1="31.5" y1="8.5" x2="28" y2="12"/><line x1="12" y1="28" x2="8.5" y2="31.5"/>
+      </svg>
+      <p class="loading-text">Calculando tu elemento primordial…</p>
+    </div>
+  </div>
+
+  <!-- ── STEP 4: RESULTADO ── -->
   <div id="s-result" class="step">
-    <p class="eyebrow">Tu Centro de Poder</p>
+    <p class="eyebrow" id="result-eyebrow">Tu Centro de Poder</p>
 
     <div id="el-card" class="el-card">
       <div id="el-sym" class="el-sym-circle"></div>
@@ -437,152 +336,205 @@ body::before {
       <p id="el-num" class="vida-num"></p>
     </div>
 
+    <!-- Share -->
+    <div class="share-row">
+      <button class="btn-share" onclick="compartir()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Compartir mi elemento
+      </button>
+    </div>
+
+    <!-- CTA -->
     <div class="cta-section">
       <div class="cta-image"></div>
       <div class="cta-content">
         <p class="cta-eyebrow">Inmersión Soberana</p>
+
+        <!-- Urgency badge -->
+        <div class="urgency" style="margin:0 auto 1.25rem;">
+          <div class="urgency-dot"></div>
+          <span class="urgency-text">Solo quedan <span id="cupos-num">7</span> cupos disponibles</span>
+        </div>
+
         <p class="cta-headline-italic">¿Lista para activar tu transformación</p>
         <h3 class="cta-headline">en comunidad sagrada?</h3>
-        <p class="cta-detail">
-          Un espacio sagrado donde mujeres de todo el mundo<br>
-          eligen vivir en plena libertad, poder y soberanía.
-        </p>
+        <p class="cta-detail" id="cta-personalizado">Un espacio sagrado donde mujeres de todo el mundo eligen vivir en plena libertad, poder y soberanía.</p>
         <p class="cta-dates">18 · 19 · 20 · 21 SEPTIEMBRE</p>
         <p class="cta-location">Península de Yucatán · Telchac</p>
         <p class="cta-mentors">Lettsy Cano · Francis Rivera</p>
         <a id="btn-wa" class="btn-wa"
-           href="https://wa.me/526271499074?text=Hola%2C+quiero+información+sobre+la+Inmersión+Soberana+%F0%9F%8C%8A"
-           target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.37A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.28c-.2.57-1.18 1.09-1.63 1.15-.42.06-.96.09-1.55-.1-.36-.11-.82-.26-1.4-.51-2.46-1.06-4.07-3.53-4.2-3.7-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.85-2.03.22-.24.47-.3.63-.3h.45c.14 0 .34-.05.52.4l.75 1.87c.06.15.02.33-.08.46l-.43.52c-.1.12-.21.25-.09.48.12.22.53.88 1.14 1.43.79.7 1.45.92 1.66 1.02.21.1.33.08.45-.05l.62-.72c.14-.17.28-.13.45-.07l1.8.85c.21.1.34.14.39.23.06.09.06.51-.14 1.08z"/>
-          </svg>
+           href="https://wa.me/526271499074?text=Hola%2C+quiero+información+sobre+la+Inmersión+Soberana+🌊"
+           target="_blank" onclick="trackWA()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.37A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.28c-.2.57-1.18 1.09-1.63 1.15-.42.06-.96.09-1.55-.1-.36-.11-.82-.26-1.4-.51-2.46-1.06-4.07-3.53-4.2-3.7-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.85-2.03.22-.24.47-.3.63-.3h.45c.14 0 .34-.05.52.4l.75 1.87c.06.15.02.33-.08.46l-.43.52c-.1.12-.21.25-.09.48.12.22.53.88 1.14 1.43.79.7 1.45.92 1.66 1.02.21.1.33.08.45-.05l.62-.72c.14-.17.28-.13.45-.07l1.8.85c.21.1.34.14.39.23.06.09.06.51-.14 1.08z"/></svg>
           Quiero información de la Inmersión Soberana
         </a>
       </div>
     </div>
 
     <p class="num-note">Calculado con numerología pitagórica del número de vida</p>
-    <button class="btn-ghost" onclick="go('s-form')">← Calcular de nuevo</button>
+    <button class="btn-ghost" onclick="go('s-form',1)">← Calcular de nuevo</button>
   </div>
 
-  </div>
+ </div>
 </div>
 
+<style>
+@keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+</style>
+
 <script>
-function go(id) {
-  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-  const el = document.getElementById(id);
-  el.classList.add('active');
-  el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
-  window.scrollTo({top:0, behavior:'smooth'});
-}
+// ── Cupos dinámicos (cambia el número según disponibilidad real)
+const CUPOS = 7;
+document.getElementById('cupos-num').textContent = CUPOS;
 
-function reduce9(n) {
-  while (n > 9) n = String(n).split('').reduce((a,d)=>a+parseInt(d),0);
-  return n;
-}
-
+// ── Datos de elementos
 const DATA = {
-  tierra: {
-    cls: 'el-tierra', sym: '◈',
-    tag: 'Centro Tierra', name: 'La Tierra', arch: 'Abundancia · Raíz · Presencia',
-    poder: 'La Tierra te llama a enraizarte en tu cuerpo como templo sagrado, a reclamar tu derecho a la abundancia sin culpa, y a construir la seguridad interior que nadie puede quitarte.',
-    focus: [
-      'Sanar tu relación con el dinero y la prosperidad material',
-      'Reconectar con la sabiduría y señales de tu cuerpo',
-      'Establecer límites firmes desde el amor, no desde el miedo',
-      'Crear una base interior de estabilidad y arraigo profundo',
-      'Disolver creencias de escasez heredadas de tu linaje'
-    ]
-  },
-  fuego: {
-    cls: 'el-fuego', sym: '△',
-    tag: 'Centro Fuego', name: 'El Fuego', arch: 'Voluntad · Coraje · Poder Creativo',
-    poder: 'El Fuego te convoca a despertar tu voluntad soberana, a soltar el miedo a brillar con toda tu luz, y a convertir cada llama de ira reprimida en combustible para tu transformación.',
-    focus: [
-      'Liberar la ira reprimida y convertirla en acción consciente',
-      'Superar el miedo a la visibilidad y a ser vista en tu plenitud',
-      'Activar tu poder creativo y tu sensualidad como fuerza sagrada',
-      'Tomar decisiones desde el coraje, no desde la aprobación',
-      'Quemar lo que ya no sirve y renacer desde tu centro de fuego'
-    ]
-  },
-  aire: {
-    cls: 'el-aire', sym: '◇',
-    tag: 'Centro Aire', name: 'El Aire', arch: 'Mente · Palabra · Libertad',
-    poder: 'El Aire te invita a liberarte de los pensamientos que te aprisionan, a elevar tu voz con verdad y sin disculpas, y a habitar la libertad incondicional que vive en tu mente soberana.',
-    focus: [
-      'Desmantelar creencias limitantes heredadas y adquiridas',
-      'Sanar y empoderar tu voz y tu expresión auténtica',
-      'Desarrollar claridad mental para decidir con confianza',
-      'Soltar la necesidad de validación externa para actuar',
-      'Cultivar la paz mental como estado natural de tu ser'
-    ]
-  },
-  agua: {
-    cls: 'el-agua', sym: '≋',
-    tag: 'Centro Agua', name: 'El Agua', arch: 'Emoción · Intuición · Sanación',
-    poder: 'El Agua te guía a honrar tus emociones como mensajeras de verdad, a liberar lo que ya no fluye, y a activar tu intuición femenina como la brújula más poderosa y confiable que tienes.',
-    focus: [
-      'Procesar y sanar heridas emocionales del pasado y el linaje',
-      'Liberarte de patrones de codependencia y complacencia',
-      'Desarrollar y confiar plenamente en tu intuición',
-      'Aprender a fluir con los ciclos de tu vida sin resistencia',
-      'Transformar el dolor emocional en compasión y sabiduría'
-    ]
-  },
-  eter: {
-    cls: 'el-eter', sym: '✦',
-    tag: 'Centro Éter', name: 'El Éter', arch: 'Espíritu · Propósito · Soberanía del Alma',
-    poder: 'El Éter te convoca a recordar quién eres más allá de todos los roles y condicionamientos. Eres espíritu encarnado, y tu transformación profunda pasa por reclamar esa sabiduría cósmica que ya vive en ti.',
-    focus: [
-      'Reconectar con tu propósito y misión de vida más elevada',
-      'Soltar la búsqueda externa de validación espiritual',
-      'Integrar todos tus centros de poder en unidad sagrada',
-      'Vivir desde la soberanía del alma como estado permanente',
-      'Expandir tu conciencia más allá de los límites que te impusieron'
-    ]
-  }
+  tierra:{cls:'el-tierra',sym:'◈',tag:'Centro Tierra',name:'La Tierra',arch:'Abundancia · Raíz · Presencia',poder:'La Tierra te llama a enraizarte en tu cuerpo como templo sagrado, a reclamar tu derecho a la abundancia sin culpa, y a construir la seguridad interior que nadie puede quitarte.',focus:['Sanar tu relación con el dinero y la prosperidad material','Reconectar con la sabiduría y señales de tu cuerpo','Establecer límites firmes desde el amor, no desde el miedo','Crear una base interior de estabilidad y arraigo profundo','Disolver creencias de escasez heredadas de tu linaje'],cta:'Tu elemento Tierra está listo para arraigarse. En la Inmersión vivirás ceremonias de enraizamiento que transforman tu relación con la abundancia.'},
+  fuego:{cls:'el-fuego',sym:'△',tag:'Centro Fuego',name:'El Fuego',arch:'Voluntad · Coraje · Poder Creativo',poder:'El Fuego te convoca a despertar tu voluntad soberana, a soltar el miedo a brillar con toda tu luz, y a convertir cada llama de ira reprimida en combustible para tu transformación.',focus:['Liberar la ira reprimida y convertirla en acción consciente','Superar el miedo a la visibilidad y a ser vista en tu plenitud','Activar tu poder creativo y tu sensualidad como fuerza sagrada','Tomar decisiones desde el coraje, no desde la aprobación','Quemar lo que ya no sirve y renacer desde tu centro de fuego'],cta:'Tu Fuego está listo para encenderse. En la Inmersión vivirás una ceremonia de fuego real que activa tu poder creador.'},
+  aire:{cls:'el-aire',sym:'◇',tag:'Centro Aire',name:'El Aire',arch:'Mente · Palabra · Libertad',poder:'El Aire te invita a liberarte de los pensamientos que te aprisionan, a elevar tu voz con verdad y sin disculpas, y a habitar la libertad incondicional que vive en tu mente soberana.',focus:['Desmantelar creencias limitantes heredadas y adquiridas','Sanar y empoderar tu voz y tu expresión auténtica','Desarrollar claridad mental para decidir con confianza','Soltar la necesidad de validación externa para actuar','Cultivar la paz mental como estado natural de tu ser'],cta:'Tu elemento Aire está listo para desplegarse. En la Inmersión trabajarás tu voz sagrada y liberarás los pensamientos que te limitan.'},
+  agua:{cls:'el-agua',sym:'≋',tag:'Centro Agua',name:'El Agua',arch:'Emoción · Intuición · Sanación',poder:'El Agua te guía a honrar tus emociones como mensajeras de verdad, a liberar lo que ya no fluye, y a activar tu intuición femenina como la brújula más poderosa y confiable que tienes.',focus:['Procesar y sanar heridas emocionales del pasado y el linaje','Liberarte de patrones de codependencia y complacencia','Desarrollar y confiar plenamente en tu intuición','Aprender a fluir con los ciclos de tu vida sin resistencia','Transformar el dolor emocional en compasión y sabiduría'],cta:'Tu elemento Agua está listo para fluir. La Inmersión incluye una ceremonia en cenote que activa tu intuición a un nivel que no olvidarás.'},
+  eter:{cls:'el-eter',sym:'✦',tag:'Centro Éter',name:'El Éter',arch:'Espíritu · Propósito · Soberanía del Alma',poder:'El Éter te convoca a recordar quién eres más allá de todos los roles y condicionamientos. Eres espíritu encarnado, y tu transformación profunda pasa por reclamar esa sabiduría cósmica que ya vive en ti.',focus:['Reconectar con tu propósito y misión de vida más elevada','Soltar la búsqueda externa de validación espiritual','Integrar todos tus centros de poder en unidad sagrada','Vivir desde la soberanía del alma como estado permanente','Expandir tu conciencia más allá de los límites que te impusieron'],cta:'Tu elemento Éter está listo para expandirse. La Inmersión es el espacio donde tu propósito más elevado se activa en comunidad sagrada.'}
 };
 
-const MAP = {1:'tierra',2:'agua',3:'fuego',4:'aire',5:'eter',6:'tierra',7:'agua',8:'fuego',9:'aire'};
+const MAP={1:'tierra',2:'agua',3:'fuego',4:'aire',5:'eter',6:'tierra',7:'agua',8:'fuego',9:'aire'};
 
-function calcular() {
-  const d = parseInt(document.getElementById('inp-d').value);
-  const m = parseInt(document.getElementById('inp-m').value);
-  const y = parseInt(document.getElementById('inp-y').value);
-  const err = document.getElementById('err-msg');
+// Estado
+let _vida = null, _elemento = null, _nombre = '';
 
-  if (!d||!m||!y||d<1||d>31||m<1||m>12||y<1920||y>2008) {
+// ── Navegación con dots
+function go(id, step) {
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  el.style.animation='none'; void el.offsetWidth; el.style.animation='';
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  // Update dots
+  if(step !== undefined) {
+    for(let i=1;i<=4;i++){
+      const dot = document.getElementById('dot-'+i);
+      if(i < step+1) dot.className = 'progress-dot done';
+      else if(i === step+1) dot.className = 'progress-dot active';
+      else dot.className = 'progress-dot';
+    }
+  }
+}
+
+// ── Validar fecha
+function reduce9(n){while(n>9)n=String(n).split('').reduce((a,d)=>a+parseInt(d),0);return n;}
+
+function validarFecha() {
+  const d=parseInt(document.getElementById('inp-d').value);
+  const m=parseInt(document.getElementById('inp-m').value);
+  const y=parseInt(document.getElementById('inp-y').value);
+  const maxY=new Date().getFullYear()-10;
+  const err=document.getElementById('err-msg');
+
+  if(!d||!m||!y||d<1||d>31||m<1||m>12||y<1920||y>maxY){
     err.style.display='block'; return;
   }
   err.style.display='none';
 
-  const digits = (String(d)+String(m)+String(y)).split('').map(Number);
-  const vida = reduce9(digits.reduce((a,n)=>a+n,0));
-  const key = MAP[vida];
-  const el = DATA[key];
+  const digits=(String(d)+String(m)+String(y)).split('').map(Number);
+  _vida=reduce9(digits.reduce((a,n)=>a+n,0));
+  _elemento=MAP[_vida]||'tierra';
+
+  // Track con Meta Pixel
+  if(typeof fbq!=='undefined') fbq('track','ViewContent',{content_name:'quiz_fecha_ingresada'});
+
+  go('s-email',2);
+}
+
+// ── Revelar resultado con email
+function revelarResultado() {
+  const nombre=document.getElementById('inp-nombre').value.trim();
+  const email=document.getElementById('inp-email').value.trim();
+  const err=document.getElementById('err-email');
+
+  if(!nombre||!email||!/\S+@\S+\.\S+/.test(email)){
+    err.style.display='block'; return;
+  }
+  err.style.display='none';
+  _nombre=nombre;
+
+  // Track Lead con Meta Pixel
+  if(typeof fbq!=='undefined') fbq('track','Lead',{
+    content_name:'quiz_lead',
+    content_category:_elemento,
+    value:0, currency:'USD'
+  });
+
+  // Guardar en localStorage (para retargeting)
+  try{localStorage.setItem('sob_nombre',nombre);localStorage.setItem('sob_email',email);localStorage.setItem('sob_elemento',_elemento);}catch(e){}
+
+  // Mailing Boss — Lista CENTRO DE PODER
+  fetch('https://app.mailingboss.com/hook/6a22f71be6183', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({email: email, name: nombre, tag: _elemento})
+  }).catch(()=>{}); // silencioso si falla
+
+  // Loading animation
+  go('s-loading',3);
+
+  setTimeout(()=>{
+    mostrarResultado();
+    go('s-result',3);
+  }, 1800);
+}
+
+// ── Mostrar resultado
+function mostrarResultado() {
+  const el = DATA[_elemento];
+
+  document.getElementById('result-eyebrow').textContent = _nombre ? `Tu Centro de Poder, ${_nombre}` : 'Tu Centro de Poder';
 
   const card = document.getElementById('el-card');
   card.className = 'el-card ' + el.cls;
-  document.getElementById('el-sym').textContent  = el.sym;
-  document.getElementById('el-tag').textContent  = el.tag;
-  document.getElementById('el-name').textContent = el.name;
-  document.getElementById('el-arch').textContent = el.arch;
-  document.getElementById('el-poder').textContent= el.poder;
-  document.getElementById('el-num').textContent  = 'Número de vida · ' + vida;
+  document.getElementById('el-sym').textContent   = el.sym;
+  document.getElementById('el-tag').textContent   = el.tag;
+  document.getElementById('el-name').textContent  = el.name;
+  document.getElementById('el-arch').textContent  = el.arch;
+  document.getElementById('el-poder').textContent = el.poder;
+  document.getElementById('el-num').textContent   = 'Número de vida · ' + _vida;
+
   const ul = document.getElementById('el-focus');
   ul.innerHTML = el.focus.map(f=>`<li>${f}</li>`).join('');
 
-  const msg = encodeURIComponent(`Hola, acabo de descubrir que mi Centro de Poder es ${el.name} (número de vida ${vida}) y quiero información sobre la Inmersión Soberana 🌊`);
-  document.getElementById('btn-wa').href = `https://wa.me/526271499074?text=${msg}`;
+  // CTA personalizado por elemento
+  document.getElementById('cta-personalizado').textContent = el.cta;
 
-  go('s-result');
+  // WhatsApp con mensaje personalizado
+  const nombre_enc = encodeURIComponent(_nombre);
+  const msg = encodeURIComponent(`Hola, soy ${_nombre}. Acabo de descubrir que mi Centro de Poder es ${el.name} (número de vida ${_vida}) y quiero información sobre la Inmersión Soberana 🌊`);
+  document.getElementById('btn-wa').href = `https://wa.me/526271499074?text=${msg}`;
 }
 
-document.addEventListener('keydown', e => {
-  if (e.key==='Enter' && document.getElementById('s-form').classList.contains('active')) calcular();
+// ── Track WhatsApp click
+function trackWA() {
+  if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'whatsapp_click',content_category:_elemento});
+}
+
+// ── Compartir
+function compartir() {
+  const el = DATA[_elemento];
+  const text = `Descubrí que mi Centro de Poder es ${el.name} ✦ ${el.arch}\n\nDescubre el tuyo en: https://francisriverabusiness-art.github.io/centros-de-poder/`;
+  if(navigator.share){
+    navigator.share({title:'Mi Centro de Poder — Inmersión Soberana',text,url:'https://francisriverabusiness-art.github.io/centros-de-poder/'}).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(text).then(()=>alert('¡Copiado! Pégalo donde quieras.'));
+  }
+  if(typeof fbq!=='undefined') fbq('track','Share',{content_category:_elemento});
+}
+
+// Enter key para forms
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    if(document.getElementById('s-form').classList.contains('active')) validarFecha();
+    else if(document.getElementById('s-email').classList.contains('active')) revelarResultado();
+  }
 });
 </script>
+
 </body>
 </html>
