@@ -476,11 +476,19 @@ function revelarResultado() {
   // Guardar en localStorage (para retargeting)
   try{localStorage.setItem('sob_nombre',nombre);localStorage.setItem('sob_email',email);localStorage.setItem('sob_elemento',_elemento);}catch(e){}
 
-  // Mailing Boss — Lista CENTRO DE PODER
-  fetch('https://app.mailingboss.com/hook/6a22f71be6183', {
+  // Mailing Boss — Webhook por elemento
+  const WEBHOOKS = {
+    tierra: 'https://app.mailingboss.com/hook/6a236b3637845',
+    fuego:  'https://app.mailingboss.com/hook/6a236b5acbe89',
+    aire:   'https://app.mailingboss.com/hook/6a236b76d936b',
+    agua:   'https://app.mailingboss.com/hook/6a236b76e55df',
+    eter:   'https://app.mailingboss.com/hook/6a236bc98a2b3'
+  };
+  const webhookUrl = WEBHOOKS[_elemento] || WEBHOOKS['eter'];
+  fetch(webhookUrl, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({email: email, name: nombre, tag: _elemento})
+    body: JSON.stringify({email: email, name: nombre})
   }).catch(()=>{}); // silencioso si falla
 
   // Loading animation
